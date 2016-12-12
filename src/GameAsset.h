@@ -2,8 +2,12 @@
 #define GAMEASSET_H
 
 #include <iostream>
-
+#include <memory>
 #include <GL/gl.h>
+
+#include <glm/glm.hpp>
+#include <glm/ext.hpp>
+#include <glm/mat4x4.hpp>
 
 class GameAsset {
  public:
@@ -12,7 +16,7 @@ class GameAsset {
   void translate(float x, float y, float z);
 
  private:
-  std::shared_ptr <glm::mat4> model_matrix;
+  glm::mat4 model_matrix;
 };
 
 #endif
