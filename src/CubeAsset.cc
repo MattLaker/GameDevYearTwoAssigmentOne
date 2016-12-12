@@ -71,6 +71,26 @@ void checkError(std::string file, int line) {
   }
 }
 void CubeAsset::Draw(GLuint program_token) {
+SDL_Event event;
+	while( SDL_PollEvent( &event ) ){
+    switch( event.type ){
+      case SDL_KEYDOWN:   
+		switch( event.key.keysym.sym ){
+        	case SDLK_RIGHT:
+        		this->translate(1.0, 0.0, 0.0);
+                break; 
+			case SDLK_LEFT:
+        		this->translate(-1.0, 0.0, 0.0);
+                break; 
+		break;
+		}
+	}
+	}
+	glm::mat4 m = this->getModelMatrix();
+
+	GLuint model_uniform = glGetUniformLocation(program_token, "model");
+	glUniformMatrix4fv(model_uniform, 1, false, glm::value_ptr(m));
+
   if(!glIsProgram(program_token)) {
     std::cerr << "Drawing Cube with invalid program" << std::endl;
     return;

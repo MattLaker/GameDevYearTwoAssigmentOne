@@ -18,7 +18,9 @@ void GameAsset::translate(float x, float y, float z){
 			     	glm::vec4(0.0, 0.0, 1.0, 0.0),
 			     	glm::vec4(x, y, z, 1.0)
 	);
-	model_matrix *= m;
+	model_matrix = model_matrix * m;
 }
 
-
+glm::mat4 GameAsset::getModelMatrix(){
+return model_matrix;
+}

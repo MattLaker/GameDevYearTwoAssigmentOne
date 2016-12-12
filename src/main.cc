@@ -159,8 +159,9 @@ int main(int argc, char ** argv) {
       break;
     case SDL_USEREVENT:
       Draw(window, game_world);
-
       break;
+	case SDL_KEYDOWN:
+		std::cout << "Hello" << std::endl;
     default:
       break;
     }
