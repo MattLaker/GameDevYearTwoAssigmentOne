@@ -66,9 +66,15 @@ void GameAssetManager::AddAsset(std::shared_ptr<GameAsset> the_asset) {
  * Draws each GameAsset in the scene graph.
  */
 void GameAssetManager::Draw() {
-  for(auto ga: draw_list) {
-    ga->Draw(program_token);
-  }
+	auto camera = std::make_shared<Camera>();
+	glm::mat4 c = camera->getViewMatrix();
+
+	GLuint view_uniform = glGetUniformLocation(program_token, "view");
+	glUniformMatrix4fv(view_uniform, 1, false, glm::value_ptr(c));
+
+	for(auto ga: draw_list) {
+    	ga->Draw(program_token);
+  	}
 }
 
 /**

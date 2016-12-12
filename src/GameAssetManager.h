@@ -8,10 +8,15 @@
 #include <fstream>
 #include <iostream>
 
+#include <glm/glm.hpp>
+#include <glm/ext.hpp>
+#include <glm/mat4x4.hpp>
+
 #include <GL/gl.h>
 
 #include "common.h"
 #include "GameAsset.h"
+#include "Camera.h"
 
 /**
  * GameAssetManager is a container for GameAssets.  It also provides utility

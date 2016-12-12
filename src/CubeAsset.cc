@@ -3,17 +3,40 @@
 CubeAsset::CubeAsset() {
   // model coordinates, origin at centre.
   GLfloat vertex_buffer [] {
-    -0.5, -0.5, -0.5
-    , -0.5,  0.5, -0.5
-    ,  0.5, -0.5, -0.5
-    ,  0.5,  0.5, -0.5
+    //front face of cube
+        -0.5, -0.5, -0.5
+      , -0.5,  0.5, -0.5
+      , 0.5, -0.5, -0.5
+      , 0.5,  0.5, -0.5
+    //back face of cube
+      , -0.5, -0.5, 0.5
+      , -0.5,  0.5, 0.5
+      , 0.5, -0.5,  0.5
+      , 0.5,  0.5,  0.5	  
   };
 
-  element_buffer_length = 6;
+  element_buffer_length = 36;
   GLuint element_buffer []  {
-    0, 1, 2
-    , 1, 3, 2
-  };
+    //back
+       0, 1, 2
+    ,  1, 3, 2
+    //front
+    ,  4, 5, 6
+    ,  5, 7, 6
+    //top
+    ,  5, 1, 7
+    ,  1, 3, 7
+    //bottom
+    ,  4, 0, 6
+    ,  0, 2, 6
+    //left
+    ,  0, 1, 4
+    ,  1, 5, 4
+    //right
+    ,  6, 7, 2
+    ,  7, 3, 2
+	 
+ };
 
   // Transfer buffers to the GPU
   //
@@ -23,7 +46,7 @@ CubeAsset::CubeAsset() {
 
   // immediately bind the buffer and transfer the data
   glBindBuffer(GL_ARRAY_BUFFER, vertex_buffer_token);
-  glBufferData(GL_ARRAY_BUFFER, sizeof(GLfloat) * 12, vertex_buffer, GL_STATIC_DRAW);
+  glBufferData(GL_ARRAY_BUFFER, sizeof(GLfloat) * 24, vertex_buffer, GL_STATIC_DRAW);
 
   glGenBuffers(1, &element_buffer_token);
   glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, element_buffer_token);
@@ -48,7 +71,6 @@ void checkError(std::string file, int line) {
   }
 }
 
-void CubeAsset::Draw(GLuint program_token) {
   if(!glIsProgram(program_token)) {
     std::cerr << "Drawing Cube with invalid program" << std::endl;
     return;
