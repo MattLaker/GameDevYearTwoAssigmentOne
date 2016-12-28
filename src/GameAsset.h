@@ -13,7 +13,6 @@ class GameAsset {
  public:
   GameAsset();
   virtual void Draw(GLuint) = 0;
-  void translate(float x, float y, float z);
   glm::mat4 getModelMatrix();
 
  private:

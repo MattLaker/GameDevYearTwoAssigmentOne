@@ -8,6 +8,8 @@
 #include <fstream>
 #include <iostream>
 
+#include <SDL2/SDL.h>
+
 #include <glm/glm.hpp>
 #include <glm/ext.hpp>
 #include <glm/mat4x4.hpp>
@@ -38,7 +40,7 @@ class GameAssetManager {
   GLuint CreateGLESShader(GLenum, std::string &);
   // As this is private and we're writing to the GPU, we will use raw pointers.
   std::pair<GLchar *, GLint>  ReadShader(std::string &);
-
+  std::shared_ptr<Camera> camera;
   // The internal scene graph is a simple list.
   std::vector<std::shared_ptr<GameAsset>> draw_list;
   GLuint program_token;

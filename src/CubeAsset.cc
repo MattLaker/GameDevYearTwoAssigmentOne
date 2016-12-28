@@ -4,15 +4,15 @@ CubeAsset::CubeAsset() {
   // model coordinates, origin at centre.
   GLfloat vertex_buffer [] {
     //front face of cube
-        -0.5, -0.5, -0.5
-      , -0.5,  0.5, -0.5
-      , 0.5, -0.5, -0.5
-      , 0.5,  0.5, -0.5
-    //back face of cube
-      , -0.5, -0.5, 0.5
+        -0.5, -0.5, 0.5
       , -0.5,  0.5, 0.5
-      , 0.5, -0.5,  0.5
-      , 0.5,  0.5,  0.5	  
+      , 0.5, -0.5, 0.5
+      , 0.5,  0.5, 0.5
+    //back face of cube
+      , -0.5, -0.5, -0.5
+      , -0.5,  0.5, -0.5
+      , 0.5, -0.5,  -0.5
+      , 0.5,  0.5,  -0.5	  
   };
 
   element_buffer_length = 36;
@@ -71,21 +71,6 @@ void checkError(std::string file, int line) {
   }
 }
 void CubeAsset::Draw(GLuint program_token) {
-SDL_Event event;
-	while( SDL_PollEvent( &event ) ){
-    switch( event.type ){
-      case SDL_KEYDOWN:   
-		switch( event.key.keysym.sym ){
-        	case SDLK_RIGHT:
-        		this->translate(1.0, 0.0, 0.0);
-                break; 
-			case SDLK_LEFT:
-        		this->translate(-1.0, 0.0, 0.0);
-                break; 
-		break;
-		}
-	}
-	}
 	glm::mat4 m = this->getModelMatrix();
 
 	GLuint model_uniform = glGetUniformLocation(program_token, "model");

@@ -21,6 +21,8 @@ GameAssetManager::GameAssetManager(ApplicationMode mode) {
   };
 
   program_token = CreateGLProgram(vertex_shader, fragment_shader);
+
+  camera = std::make_shared<Camera>();
 }
 
 /**
@@ -66,7 +68,51 @@ void GameAssetManager::AddAsset(std::shared_ptr<GameAsset> the_asset) {
  * Draws each GameAsset in the scene graph.
  */
 void GameAssetManager::Draw() {
-	auto camera = std::make_shared<Camera>();
+	
+SDL_Event event;
+	while( SDL_PollEvent( &event ) ){
+    switch( event.type ){
+	case SDL_MOUSEMOTION:
+		if(event.motion.xrel > 0){
+			camera->rotate_y(-0.005);
+		}
+		else if(event.motion.xrel < 0){
+			camera->rotate_y(0.005);
+		}
+
+		if(event.motion.yrel > 0){
+			camera->rotate_x(0.005);
+		}
+		else if(event.motion.yrel < 0){
+			camera->rotate_x(-0.005);
+		}
+		break;
+	case SDL_KEYDOWN:   
+		switch( event.key.keysym.sym ){
+        	case SDLK_RIGHT:
+        		camera->move_x(-0.1);
+                	break; 
+			case SDLK_LEFT:
+        			camera->move_x(0.1);
+                		break;
+			case SDLK_UP:
+				camera->move_z(0.1);
+				break;
+			case SDLK_DOWN:
+				camera->move_z(-0.1);
+				break;
+			case SDLK_a:
+				camera->rotate_y(0.1);
+				break;
+			case SDLK_d:
+				camera->rotate_y(-0.1);
+				break;
+			default:
+				break;
+		}
+	
+	}
+	}	
 	glm::mat4 c = camera->getViewMatrix();
 
 	GLuint view_uniform = glGetUniformLocation(program_token, "view");

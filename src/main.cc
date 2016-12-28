@@ -11,6 +11,7 @@
 
 #include "common.h"
 #include "GameWorld.h"
+#include "Camera.h"
 
 /*
  * SDL timers run in separate threads.  In the timer thread
@@ -140,9 +141,9 @@ ApplicationMode ParseOptions (int argc, char ** argv) {
 int main(int argc, char ** argv) {
   Uint32 delay = 1000/60; // in milliseconds
 
-  auto mode = ParseOptions(argc, argv);
-  auto window = InitWorld();
-  auto game_world = std::make_shared<GameWorld>(mode);
+	auto mode = ParseOptions(argc, argv);
+	auto window = InitWorld();
+	auto game_world = std::make_shared<GameWorld>(mode);
   if(!window) {
     SDL_Quit();
   }
@@ -160,8 +161,6 @@ int main(int argc, char ** argv) {
     case SDL_USEREVENT:
       Draw(window, game_world);
       break;
-	case SDL_KEYDOWN:
-		std::cout << "Hello" << std::endl;
     default:
       break;
     }
