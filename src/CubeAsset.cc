@@ -5,28 +5,28 @@ CubeAsset::CubeAsset(GLfloat x, GLfloat y, GLfloat z) {
 	GLfloat size = 0.5;
   GLfloat vertex_buffer [] {
     //front face of cube
-        x-size, y-size, z+size
-      , x-size, y+size, z+size
-      , x+size, y-size, z+size
-      , x+size, y+size, z+size
+        x-size, y-size, z+size		//0
+      , x-size, y+size, z+size		//1
+      , x+size, y-size, z+size		//2
+      , x+size, y+size, z+size		//3
     //back face of cube
-      , x-size, y-size, z-size
-      , x-size, y+size, z-size
-      , x+size, y-size, z-size
-      , x+size, y+size, z-size	  
+      , x-size, y-size, z-size		//4
+      , x-size, y+size, z-size		//5
+      , x+size, y-size, z-size		//6
+      , x+size, y+size, z-size	  	//7
   };
 
   element_buffer_length = 36;
   GLuint element_buffer []  {
-    //back
+    //front
        0, 1, 2
     ,  1, 3, 2
-    //front
+    //back
     ,  4, 5, 6
     ,  5, 7, 6
     //top
     ,  5, 1, 7
-    ,  1, 3, 7
+    ,  5, 3, 7
     //bottom
     ,  4, 0, 6
     ,  0, 2, 6
@@ -52,6 +52,7 @@ CubeAsset::CubeAsset(GLfloat x, GLfloat y, GLfloat z) {
   glGenBuffers(1, &element_buffer_token);
   glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, element_buffer_token);
   glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(GLuint) * element_buffer_length, element_buffer, GL_STATIC_DRAW);
+
 }
 
 CubeAsset::~CubeAsset() {
@@ -73,9 +74,13 @@ void checkError(std::string file, int line) {
 }
 void CubeAsset::Draw(GLuint program_token) {
 	glm::mat4 m = this->getModelMatrix();
-
 	GLuint model_uniform = glGetUniformLocation(program_token, "model");
 	glUniformMatrix4fv(model_uniform, 1, false, glm::value_ptr(m));
+
+	glm::vec3 c = this->getColour();
+	GLuint colour_uniform = glGetUniformLocation(program_token, "colour");
+	glUniform3fv(colour_uniform, 1, glm::value_ptr(c));
+
 
   if(!glIsProgram(program_token)) {
     std::cerr << "Drawing Cube with invalid program" << std::endl;
@@ -131,4 +136,12 @@ void CubeAsset::Draw(GLuint program_token) {
   checkGLError();
 
   glDisableVertexAttribArray(position_attrib);
+}
+
+glm::vec3 CubeAsset::getColour() {
+	return colour_token;
+}
+
+void CubeAsset::setColour(float r, float g, float b) {
+	colour_token = glm::vec3(r, g, b);
 }

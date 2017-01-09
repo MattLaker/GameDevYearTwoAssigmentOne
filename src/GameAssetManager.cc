@@ -87,11 +87,8 @@ SDL_Event event;
 			camera->rotate_x(-0.03);
 		}
 		break;
-	case SDL_KEYDOWN:   
+	case SDL_KEYDOWN:  
 		switch( event.key.keysym.sym ){
-        	case SDLK_RIGHT:
-        		camera->move_x(-0.1);
-                	break; 
 			case SDLK_w:
 				camera->move_z(0.1);
 				break;
