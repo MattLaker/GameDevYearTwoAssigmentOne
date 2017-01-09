@@ -74,17 +74,17 @@ SDL_Event event;
     switch( event.type ){
 	case SDL_MOUSEMOTION:
 		if(event.motion.xrel > 0){
-			camera->rotate_y(-0.005);
+			camera->rotate_y(-0.03);
 		}
 		else if(event.motion.xrel < 0){
-			camera->rotate_y(0.005);
+			camera->rotate_y(0.03);
 		}
 
 		if(event.motion.yrel > 0){
-			camera->rotate_x(0.005);
+			camera->rotate_x(0.03);
 		}
 		else if(event.motion.yrel < 0){
-			camera->rotate_x(-0.005);
+			camera->rotate_x(-0.03);
 		}
 		break;
 	case SDL_KEYDOWN:   
@@ -92,27 +92,25 @@ SDL_Event event;
         	case SDLK_RIGHT:
         		camera->move_x(-0.1);
                 	break; 
-			case SDLK_LEFT:
-        			camera->move_x(0.1);
-                		break;
-			case SDLK_UP:
+			case SDLK_w:
 				camera->move_z(0.1);
 				break;
-			case SDLK_DOWN:
+			case SDLK_s:
 				camera->move_z(-0.1);
 				break;
 			case SDLK_a:
-				camera->rotate_y(0.1);
+				camera->move_x(0.1);
 				break;
 			case SDLK_d:
-				camera->rotate_y(-0.1);
+				camera->move_x(-0.1);
 				break;
 			default:
 				break;
 		}
 	
 	}
-	}	
+	}
+
 	glm::mat4 c = camera->getViewMatrix();
 
 	GLuint view_uniform = glGetUniformLocation(program_token, "view");
