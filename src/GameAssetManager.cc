@@ -90,22 +90,27 @@ SDL_Event event;
 	case SDL_KEYDOWN:  
 		switch( event.key.keysym.sym ){
 			case SDLK_w:
-				camera->move_z(0.1);
+				camera->move_z(0.01);
 				break;
 			case SDLK_s:
-				camera->move_z(-0.1);
+				camera->move_z(-0.01);
 				break;
 			case SDLK_a:
-				camera->move_x(0.1);
+				camera->move_x(0.01);
 				break;
 			case SDLK_d:
-				camera->move_x(-0.1);
+				camera->move_x(-0.01);
 				break;
 			default:
 				break;
 		}
+	case SDL_QUIT:
+		break;
+	default:
+		break;
 	
 	}
+	
 	}
 
 	glm::mat4 c = camera->getViewMatrix();
@@ -117,6 +122,7 @@ SDL_Event event;
     	ga->Draw(program_token);
   	}
 }
+
 
 /**
  * When given the contents of a vertex shader and fragment shader
