@@ -2,9 +2,9 @@
 
 GameWorld::GameWorld (ApplicationMode mode) : asset_manager(std::make_shared<GameAssetManager>(mode)) {
 	//Floor of the voxel world
-	for(int j=0; j<10; j++) {
-		for(int i=0; i<10; i++) {
-			auto cube = std::make_shared<CubeAsset>(i,0, j);
+	for(int j=0; j<2; j++) {
+		for(int i=0; i<1; i++) {
+			auto cube = std::make_shared<CubeAsset>(i*2,0, j*2);
 
 			if(i % 2 == 0 && j % 2 == 0){
 				cube->setColour(1,0,0);		//red
@@ -19,7 +19,7 @@ GameWorld::GameWorld (ApplicationMode mode) : asset_manager(std::make_shared<Gam
 			asset_manager->AddAsset(cube);			
 		}
 
-	//Front wall
+	/*//Front wall
 	for(int j=0; j<10; j++) {
 		for(int i=0; i<10; i++) {
 			auto cube = std::make_shared<CubeAsset>(i,j,10);
@@ -48,7 +48,7 @@ GameWorld::GameWorld (ApplicationMode mode) : asset_manager(std::make_shared<Gam
 			auto cube = std::make_shared<CubeAsset>(10,j,i);
 			asset_manager->AddAsset(cube);	
 	}
-	}
+	}*/
 }
 }
 void GameWorld::Draw() {

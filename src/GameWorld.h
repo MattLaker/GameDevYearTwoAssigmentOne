@@ -5,6 +5,8 @@
 
 #include <GL/gl.h>
 
+#include <SDL2/SDL.h>
+
 #include "common.h"
 #include "GameAssetManager.h"
 #include "CubeAsset.h"
@@ -28,6 +30,7 @@ class GameWorld {
    * Calling Draw() will draw the entire world.
    */
   void Draw();
+
  private:
   std::shared_ptr<GameAssetManager> asset_manager;
 };

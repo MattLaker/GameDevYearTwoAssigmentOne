@@ -39,7 +39,7 @@ void Draw(const std::shared_ptr<SDL_Window> window, const std::shared_ptr<GameWo
   glClearColor(0.0f, 1.0f, 0.0f, 1.0f);
   glClear(GL_COLOR_BUFFER_BIT|GL_DEPTH_BUFFER_BIT);
 
-  game_world->Draw();
+	game_world->Draw();
 
   // Don't forget to swap the buffers
   SDL_GL_SwapWindow(window.get());
@@ -157,9 +157,11 @@ int main(int argc, char ** argv) {
     switch (event.type) {
     case SDL_QUIT:
       SDL_Quit();
+	  exit(0);
       break;
-    case SDL_USEREVENT:
-      Draw(window, game_world);
+	case SDL_USEREVENT:
+		Draw(window, game_world);
+		//SDL_SetRelativeMouseMode(SDL_TRUE);
       break;
     default:
       break;

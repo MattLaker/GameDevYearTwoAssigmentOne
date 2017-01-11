@@ -70,43 +70,47 @@ void GameAssetManager::AddAsset(std::shared_ptr<GameAsset> the_asset) {
 void GameAssetManager::Draw() {
 	
 SDL_Event event;
-	while( SDL_PollEvent( &event ) ){
-    switch( event.type ){
-	case SDL_MOUSEMOTION:
-		if(event.motion.xrel > 0){
-			camera->rotate_y(-0.03);
-		}
-		else if(event.motion.xrel < 0){
-			camera->rotate_y(0.03);
-		}
+while( SDL_PollEvent(&event)){
+    switch(event.type){
+		case SDL_MOUSEMOTION:
+			if(event.motion.xrel > 0){
+				camera->rotate_y(-0.03);
+			}
+			else if(event.motion.xrel < 0){
+				camera->rotate_y(0.03);
+			}
 
-		if(event.motion.yrel > 0){
-			camera->rotate_x(0.03);
-		}
-		else if(event.motion.yrel < 0){
-			camera->rotate_x(-0.03);
-		}
-		break;
-	case SDL_KEYDOWN:  
-		switch( event.key.keysym.sym ){
-			case SDLK_w:
-				camera->move_z(0.1);
-				break;
-			case SDLK_s:
-				camera->move_z(-0.1);
-				break;
-			case SDLK_a:
-				camera->move_x(0.1);
-				break;
-			case SDLK_d:
-				camera->move_x(-0.1);
-				break;
-			default:
-				break;
-		}
+			if(event.motion.yrel > 0){
+				camera->rotate_x(0.03);
+			}
+			else if(event.motion.yrel < 0){
+				camera->rotate_x(-0.03);
+			}
+			break;
+		case SDL_KEYDOWN: 
+			switch( event.key.keysym.sym ){
+				case SDLK_w:
+					camera->move_z(0.2);
+					break;
+				case SDLK_s:
+					camera->move_z(-0.2);
+					break;
+				case SDLK_a:
+					camera->move_x(0.2);
+					break;
+				case SDLK_d:
+					camera->move_x(-0.2);
+					break;
+				default:
+					break;
+			}
+		case SDL_QUIT:
+			break;
+		default:
+			break;
 	
 	}
-	}
+}
 
 	glm::mat4 c = camera->getViewMatrix();
 
@@ -117,7 +121,6 @@ SDL_Event event;
     	ga->Draw(program_token);
   	}
 }
-
 /**
  * When given the contents of a vertex shader and fragment shader
  * GameAssetManager::CreateGLProgram will compile and link them.  This
