@@ -71,24 +71,26 @@ void GameAssetManager::Draw() {
 	
 SDL_Event event;
 while( SDL_PollEvent(&event)){
-    switch(event.type){
+	switch(event.type){
 		case SDL_MOUSEMOTION:
 			if(event.motion.xrel > 0){
 				camera->rotate_y(-0.03);
-			}
-			else if(event.motion.xrel < 0){
+			} else if(event.motion.xrel < 0){
 				camera->rotate_y(0.03);
-			}
-
-			if(event.motion.yrel > 0){
-				camera->rotate_x(0.03);
-			}
-			else if(event.motion.yrel < 0){
-				camera->rotate_x(-0.03);
+			} else if(event.motion.yrel > 0){
+				//camera->rotate_x(-0.03);
+			} else if(event.motion.yrel < 0){
+				//camera->rotate_x(0.03);
 			}
 			break;
 		case SDL_KEYDOWN: 
 			switch( event.key.keysym.sym ){
+case SDLK_q:
+camera->rotate_x(-0.03);
+break;
+case SDLK_e:
+camera->rotate_x(0.03);
+break;
 				case SDLK_w:
 					camera->move_z(0.2);
 					break;
@@ -108,7 +110,6 @@ while( SDL_PollEvent(&event)){
 			break;
 		default:
 			break;
-	
 	}
 }
 

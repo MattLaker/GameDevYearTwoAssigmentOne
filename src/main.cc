@@ -161,7 +161,7 @@ int main(int argc, char ** argv) {
       break;
 	case SDL_USEREVENT:
 		Draw(window, game_world);
-		//SDL_SetRelativeMouseMode(SDL_TRUE);
+		SDL_SetRelativeMouseMode(SDL_TRUE);
       break;
     default:
       break;
