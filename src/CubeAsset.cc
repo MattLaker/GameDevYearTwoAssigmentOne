@@ -1,7 +1,7 @@
 #include "CubeAsset.h"
 
 CubeAsset::CubeAsset(GLfloat x, GLfloat y, GLfloat z) {
-  // model coordinates, origin at centre.
+// model coordinates, origin at centre.
 	GLfloat size = 0.5;
   GLfloat vertex_buffer [] {
     //front face of cube
@@ -19,23 +19,23 @@ CubeAsset::CubeAsset(GLfloat x, GLfloat y, GLfloat z) {
   element_buffer_length = 36;
   GLuint element_buffer []  {
     //front
-       0, 1, 2
-    ,  1, 3, 2
+       0, 2, 1
+    ,  1, 2, 3
     //back
-    ,  4, 5, 6
-    ,  5, 7, 6
+    ,  4, 6, 5
+    ,  5, 6, 7
     //top
-    ,  5, 1, 7
+    ,  1, 3, 5
     ,  5, 3, 7
     //bottom
-    ,  4, 0, 6
-    ,  0, 2, 6
+    ,  0, 2, 4
+    ,  4, 2, 6
     //left
-    ,  0, 1, 4
-    ,  1, 5, 4
+    ,  4, 0, 5
+    ,  5, 0, 1
     //right
-    ,  6, 7, 2
-    ,  7, 3, 2
+    ,  2, 6, 3
+    ,  3, 6, 7
 	 
  };
 

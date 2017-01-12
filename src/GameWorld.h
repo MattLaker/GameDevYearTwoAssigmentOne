@@ -5,6 +5,8 @@
 
 #include <GL/gl.h>
 
+#include <SDL2/SDL.h>
+
 #include "common.h"
 #include "GameAssetManager.h"
 #include "CubeAsset.h"

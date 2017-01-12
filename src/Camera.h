@@ -16,6 +16,7 @@ class Camera : public GameAsset {
 	Camera();
 	~Camera();
 	glm::mat4 getViewMatrix();
+	float getAngle();
 	void move_x(float);
 	void move_z(float);
 	void rotate_y(float);
@@ -24,6 +25,7 @@ class Camera : public GameAsset {
 	
  private:
 	glm::mat4 view_matrix;
+	float angle = 0.0;
 };
 
 #endif // CAMERA_H

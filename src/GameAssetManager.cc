@@ -5,6 +5,9 @@
  * ApplicationMode.
  */
 GameAssetManager::GameAssetManager(ApplicationMode mode) {
+  Octree<std::shared_ptr<GameAsset>> o (16, NULL);
+  draw_list(16, 0) = o;
+  draw_list(0,0,0) = std::make_shared<CubeAsset>(0,0,0);
   std::string vertex_shader("shaders/translate.vs");
   std::string fragment_shader("shaders/fragment.fs");
 
@@ -61,7 +64,7 @@ void GameAssetManager::operator=(GameAssetManager const& the_manager) {
  * Adds a GameAsset to the scene graph.
  */
 void GameAssetManager::AddAsset(std::shared_ptr<GameAsset> the_asset) {
-  draw_list.push_back(the_asset);
+  //draw_list(0,0,0) = the_asset;
 }
 
 /**
@@ -70,60 +73,59 @@ void GameAssetManager::AddAsset(std::shared_ptr<GameAsset> the_asset) {
 void GameAssetManager::Draw() {
 	
 SDL_Event event;
-	while( SDL_PollEvent( &event ) ){
-    switch( event.type ){
-	case SDL_MOUSEMOTION:
-		if(event.motion.xrel > 0){
-			camera->rotate_y(-0.03);
-		}
-		else if(event.motion.xrel < 0){
-			camera->rotate_y(0.03);
-		}
-
-		if(event.motion.yrel > 0){
-			camera->rotate_x(0.03);
-		}
-		else if(event.motion.yrel < 0){
-			camera->rotate_x(-0.03);
-		}
-		break;
-	case SDL_KEYDOWN:  
-		switch( event.key.keysym.sym ){
-			case SDLK_w:
-				camera->move_z(0.01);
-				break;
-			case SDLK_s:
-				camera->move_z(-0.01);
-				break;
-			case SDLK_a:
-				camera->move_x(0.01);
-				break;
-			case SDLK_d:
-				camera->move_x(-0.01);
-				break;
-			default:
-				break;
-		}
-	case SDL_QUIT:
-		break;
-	default:
-		break;
-	
+while( SDL_PollEvent(&event)){
+	switch(event.type){
+		case SDL_MOUSEMOTION:
+			if(event.motion.xrel > 0){
+				camera->rotate_y(-0.03);
+			} else if(event.motion.xrel < 0){
+				camera->rotate_y(0.03);
+			} if(event.motion.yrel > 0){
+				//camera->rotate_x(-0.03);
+			} else if(event.motion.yrel < 0){
+				//camera->rotate_x(0.03);
+			}
+			break;
+		case SDL_KEYDOWN: 
+			switch( event.key.keysym.sym ){
+case SDLK_q:
+camera->rotate_x(-0.03);
+break;
+case SDLK_e:
+camera->rotate_x(0.03);
+break;
+				case SDLK_w:
+					camera->move_z(0.2);
+					break;
+				case SDLK_s:
+					camera->move_z(-0.2);
+					break;
+				case SDLK_a:
+					camera->move_x(0.2);
+					break;
+				case SDLK_d:
+					camera->move_x(-0.2);
+					break;
+				default:
+					break;
+			}
+		case SDL_QUIT:
+			break;
+		default:
+			break;
 	}
-	
-	}
+}
 
 	glm::mat4 c = camera->getViewMatrix();
 
 	GLuint view_uniform = glGetUniformLocation(program_token, "view");
 	glUniformMatrix4fv(view_uniform, 1, false, glm::value_ptr(c));
 
-	for(auto ga: draw_list) {
-    	ga->Draw(program_token);
-  	}
+	
+	//for(auto ga: draw_list) {
+    	//ga->Draw(program_token);
+  	//}
 }
-
-
 /**
  * When given the contents of a vertex shader and fragment shader
  * GameAssetManager::CreateGLProgram will compile and link them.  This

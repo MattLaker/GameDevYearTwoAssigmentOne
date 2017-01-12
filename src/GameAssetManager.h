@@ -19,7 +19,8 @@
 #include "common.h"
 #include "GameAsset.h"
 #include "Camera.h"
-
+#include "octree.h"
+#include "CubeAsset.h"
 /**
  * GameAssetManager is a container for GameAssets.  It also provides utility
  * functions to to create a simple OpenGL program that can be used to draw a
@@ -41,7 +42,8 @@ class GameAssetManager {
   std::pair<GLchar *, GLint>  ReadShader(std::string &);
   std::shared_ptr<Camera> camera;
   // The internal scene graph is a simple list.
-  std::vector<std::shared_ptr<GameAsset>> draw_list;
+ Octree<std::shared_ptr<GameAsset>> draw_list(int,int);
+ // Octree<double> draw_list(int);
   GLuint program_token;
 };
 
