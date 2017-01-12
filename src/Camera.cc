@@ -36,14 +36,14 @@ void Camera::move_x (float x){
 
 
 void Camera::move_z (float z){
-	glm::mat4 view = getViewMatrix();
-
-
 	float hyp = z;
 	float adj = hyp * (cos(angle*M_PI/180));
 	float opp = sqrt((hyp*hyp) - (adj*adj));
 	if(angle < 0) {
 		opp = opp *-1;
+	}
+	if(z < 0) {
+		opp = opp * -1;
 	}
 	std::cout << angle << std::endl;
 

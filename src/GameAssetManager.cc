@@ -77,7 +77,7 @@ while( SDL_PollEvent(&event)){
 				camera->rotate_y(-0.03);
 			} else if(event.motion.xrel < 0){
 				camera->rotate_y(0.03);
-			} else if(event.motion.yrel > 0){
+			} if(event.motion.yrel > 0){
 				//camera->rotate_x(-0.03);
 			} else if(event.motion.yrel < 0){
 				//camera->rotate_x(0.03);
