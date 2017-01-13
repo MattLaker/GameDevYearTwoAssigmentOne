@@ -76,7 +76,7 @@ void Camera::reset() {
 		glm::vec4(1.0, 0.0, 0.0, 0.0),
     		glm::vec4(0.0, 1.0, 0.0, 0.0),
 		glm::vec4(0.0, 0.0, 1.0, 0.0),
-		glm::vec4(-2.0, 0.0, 0.0, 1.0)
+		glm::vec4(0.0, 0.0, 0.0, 1.0)
 	);
 	view_matrix = identity;
 }
