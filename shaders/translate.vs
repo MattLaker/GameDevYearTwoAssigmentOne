@@ -2,6 +2,7 @@
 
 uniform mat4 view;
 uniform mat4 model;
+uniform vec3 colour;
 
 in vec3 position;
 
@@ -34,10 +35,10 @@ mat4 translate(float x, float y, float z) {
 
 void main() {
 	gl_Position = projection(radians(45.0), 4.0/3.0, -0.1, -1000.0)
-	* view
 	* model
-	//* translate(0.0, 0.0, -5.0)
+	* view
+	* translate(0.0, 0.0, -5.0)
         * vec4(position, 1.0f);
 
-      frag_color = vec3(1.0, 0.0, 0.0); // black
+      frag_color = colour; // black
 }
