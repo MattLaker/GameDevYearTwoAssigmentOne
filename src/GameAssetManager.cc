@@ -85,12 +85,12 @@ while( SDL_PollEvent(&event)){
 			break;
 		case SDL_KEYDOWN: 
 			switch( event.key.keysym.sym ){
-case SDLK_q:
-camera->rotate_x(-0.03);
-break;
-case SDLK_e:
-camera->rotate_x(0.03);
-break;
+				case SDLK_q:
+					camera->rotate_x(-0.03);
+					break;
+				case SDLK_e:
+					camera->rotate_x(0.03);
+					break;
 				case SDLK_w:
 					camera->move_z(0.2);
 					break;
@@ -102,6 +102,9 @@ break;
 					break;
 				case SDLK_d:
 					camera->move_x(-0.2);
+					break;
+				case SDLK_r:
+					camera->reset();
 					break;
 				default:
 					break;

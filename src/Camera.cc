@@ -8,7 +8,7 @@ Camera::Camera(){
              glm::vec4(1.0, 0.0, 0.0, 0.0),
              glm::vec4(0.0, 1.0, 0.0, 0.0),
              glm::vec4(0.0, 0.0, 1.0, 0.0),
-             glm::vec4(0.0, 0.0, 0.0, 1.0)
+             glm::vec4(-2.0, 0.0, 0.0, 1.0)
            );
 }
 
@@ -29,12 +29,6 @@ void Camera::move_x (float x){
 	view_matrix = m * view_matrix;
 }
 
-
-
-
-
-
-
 void Camera::move_z (float z){
 	float hyp = z;
 	float adj = hyp * (cos(angle*M_PI/180));
@@ -45,27 +39,22 @@ void Camera::move_z (float z){
 	if(z < 0) {
 		opp = opp * -1;
 	}
-	std::cout << angle << std::endl;
 
 	glm::mat4 m = glm::mat4(
 		glm::vec4(1.0, 0.0, 0.0, 0.0),
-    	glm::vec4(0.0, 1.0, 0.0, 0.0),
+    		glm::vec4(0.0, 1.0, 0.0, 0.0),
 		glm::vec4(0.0, 0.0, 1.0, 0.0),
 		glm::vec4(0.0, opp, adj, 1.0)
 	);
 	view_matrix = m * view_matrix;
 }
 
-
-
-
-
 void Camera::rotate_y (float theta){
 	glm::mat4 m = glm::mat4(
 		glm::vec4(cos(theta), 0.0, sin(theta), 0.0),
-       	glm::vec4(0.0, 1.0, 0.0, 0.0),
-        glm::vec4(-sin(theta), 0.0, cos(theta), 0.0),
-        glm::vec4(0.0, 0.0, 0.0, 1.0)
+       		glm::vec4(0.0, 1.0, 0.0, 0.0),
+       		glm::vec4(-sin(theta), 0.0, cos(theta), 0.0),
+        	glm::vec4(0.0, 0.0, 0.0, 1.0)
 	);			
 	view_matrix = m * view_matrix ;
 }
@@ -80,6 +69,16 @@ void Camera::rotate_x (float theta){
 		glm::vec4(0.0, 0.0, 0.0, 1.0)
 	);
 	view_matrix = m * view_matrix ;
+}
+
+void Camera::reset() {
+	glm::mat4 identity = glm::mat4(
+		glm::vec4(1.0, 0.0, 0.0, 0.0),
+    		glm::vec4(0.0, 1.0, 0.0, 0.0),
+		glm::vec4(0.0, 0.0, 1.0, 0.0),
+		glm::vec4(0.0, 0.0, 0.0, 1.0)
+	);
+	view_matrix = identity;
 }
 
 void Camera::Draw(GLuint) {
