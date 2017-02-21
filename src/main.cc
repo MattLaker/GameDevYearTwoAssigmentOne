@@ -162,7 +162,36 @@ int main(int argc, char ** argv) {
 	case SDL_USEREVENT:
 		Draw(window, game_world);
 		SDL_SetRelativeMouseMode(SDL_TRUE);
-      break;
+    	break;
+	case SDL_MOUSEMOTION:
+		if(event.motion.yrel > 0){
+			game_world->rotate_up();
+		} else if(event.motion.yrel < 0){
+			game_world->rotate_down();
+		}
+		if(event.motion.xrel > 0){
+			game_world->rotate_right();
+		} else if(event.motion.xrel < 0){
+			game_world->rotate_left();
+		}
+		break;
+	case SDL_KEYDOWN:
+		switch( event.key.keysym.sym ){
+			case SDLK_w:
+				game_world->move_forward();
+				break;
+			case SDLK_s:
+				game_world->move_backward();
+				break;
+			case SDLK_a:
+				game_world->move_left();
+				break;
+			case SDLK_d:
+				game_world->move_right();
+				break;
+			default:
+				break;
+		}
     default:
       break;
     }

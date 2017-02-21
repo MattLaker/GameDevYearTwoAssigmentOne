@@ -64,58 +64,36 @@ void GameAssetManager::AddAsset(std::shared_ptr<GameAsset> the_asset) {
   draw_list.push_back(the_asset);
 }
 
+void GameAssetManager::move_forward() {
+	camera->move_z(0.2);
+}
+void GameAssetManager::move_backward() {
+	camera->move_z(-0.2);
+}
+void GameAssetManager::move_left() {
+	camera->move_x(0.2);
+}
+void GameAssetManager::move_right() {
+	camera->move_x(-0.2);
+}
+
+void GameAssetManager::rotate_up() {
+	camera->rotate_x(-0.03);
+}
+void GameAssetManager::rotate_down() {
+	camera->rotate_x(0.03);
+}
+void GameAssetManager::rotate_left() {
+	camera->rotate_y(0.03);
+}
+void GameAssetManager::rotate_right() {
+	camera->rotate_y(-0.03);
+}
+
 /**
  * Draws each GameAsset in the scene graph.
  */
 void GameAssetManager::Draw() {
-	
-SDL_Event event;
-while( SDL_PollEvent(&event)){
-	switch(event.type){
-		case SDL_MOUSEMOTION:
-			if(event.motion.xrel > 0){
-				camera->rotate_y(-0.03);
-			} else if(event.motion.xrel < 0){
-				camera->rotate_y(0.03);
-			} if(event.motion.yrel > 0){
-				//camera->rotate_x(-0.03);
-			} else if(event.motion.yrel < 0){
-				//camera->rotate_x(0.03);
-			}
-			break;
-		case SDL_KEYDOWN: 
-			switch( event.key.keysym.sym ){
-				case SDLK_q:
-					camera->rotate_x(-0.03);
-					break;
-				case SDLK_e:
-					camera->rotate_x(0.03);
-					break;
-				case SDLK_w:
-					camera->move_z(0.2);
-					break;
-				case SDLK_s:
-					camera->move_z(-0.2);
-					break;
-				case SDLK_a:
-					camera->move_x(0.2);
-					break;
-				case SDLK_d:
-					camera->move_x(-0.2);
-					break;
-				case SDLK_r:
-					camera->reset();
-					break;
-				default:
-					break;
-			}
-		case SDL_QUIT:
-			break;
-		default:
-			break;
-	}
-}
-
 	glm::mat4 c = camera->getViewMatrix();
 
 	GLuint view_uniform = glGetUniformLocation(program_token, "view");

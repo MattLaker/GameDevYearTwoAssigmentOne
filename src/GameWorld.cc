@@ -46,7 +46,31 @@ void GameWorld::Draw() {
   asset_manager->Draw();
 }
 
+void GameWorld::move_forward() {
+  asset_manager->move_forward();
+}
+void GameWorld::move_backward() {
+  asset_manager->move_backward();
+}
+void GameWorld::move_left() {
+  asset_manager->move_left();
+}
+void GameWorld::move_right() {
+  asset_manager->move_right();
+}
 
+void GameWorld::rotate_up() {
+  asset_manager->rotate_up();
+}
+void GameWorld::rotate_down() {
+  asset_manager->rotate_down();
+}
+void GameWorld::rotate_left() {
+  asset_manager->rotate_left();
+}
+void GameWorld::rotate_right() {
+  asset_manager->rotate_right();
+}
 
 
 

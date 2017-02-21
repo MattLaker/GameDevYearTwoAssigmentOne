@@ -30,7 +30,14 @@ class GameWorld {
    * Calling Draw() will draw the entire world.
    */
   void Draw();
-
+  void move_forward();
+  void move_backward();
+  void move_left();
+  void move_right();
+  void rotate_up();
+  void rotate_down();
+  void rotate_left();
+  void rotate_right();
  private:
   std::shared_ptr<GameAssetManager> asset_manager;
 };
