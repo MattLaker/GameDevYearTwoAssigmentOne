@@ -15,6 +15,8 @@ CubeAsset::CubeAsset(GLfloat x, GLfloat y, GLfloat z) {
       , x+size, y-size, z-size		//6
       , x+size, y+size, z-size	  	//7
   };
+  
+  //bbox->setCentre(glm::vec3(x, y, z));
 
   element_buffer_length = 36;
   GLuint element_buffer []  {

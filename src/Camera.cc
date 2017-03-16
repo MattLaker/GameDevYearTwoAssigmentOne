@@ -10,6 +10,8 @@ Camera::Camera(){
              glm::vec4(0.0, 0.0, 1.0, 0.0),
              glm::vec4(-2.0, 0.0, 0.0, 1.0)
            );
+
+	//bbox->setCentre(glm::vec3(-2.0, 0.0, 0.0));
 }
 
 Camera::~Camera(){
