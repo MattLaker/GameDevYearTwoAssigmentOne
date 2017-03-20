@@ -19,12 +19,15 @@
 #include "common.h"
 #include "GameAsset.h"
 #include "Camera.h"
+#include "AABoundingBox.h"
+#include "GameMaths.h"
 
 /**
  * GameAssetManager is a container for GameAssets.  It also provides utility
  * functions to to create a simple OpenGL program that can be used to draw a
  * simple GameAsset.
  */
+
 class GameAssetManager {
  public:
   explicit GameAssetManager(ApplicationMode); // constructor
@@ -42,6 +45,8 @@ class GameAssetManager {
   void rotate_down();
   void rotate_left();
   void rotate_right();
+
+  bool CollideCheck(std::shared_ptr<AABoundingBox>);
  private:
   GLuint CreateGLProgram(std::string &, std::string &);
   GLuint CreateGLESShader(GLenum, std::string &);

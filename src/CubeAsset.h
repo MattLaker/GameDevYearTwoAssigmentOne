@@ -13,7 +13,7 @@
 
 class CubeAsset : public GameAsset {
  public:
-  CubeAsset(GLfloat, GLfloat, GLfloat);
+  CubeAsset(float, float, float);
   ~CubeAsset();
   virtual void Draw(GLuint);
   glm::vec3 getColour();

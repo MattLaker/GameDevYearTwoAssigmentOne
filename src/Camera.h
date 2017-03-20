@@ -17,6 +17,7 @@ class Camera : public GameAsset {
 	~Camera();
 	glm::mat4 getViewMatrix();
 	float getAngle();
+
 	void move_x(float);
 	void move_z(float);
 	void rotate_y(float);

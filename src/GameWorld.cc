@@ -9,7 +9,7 @@ GameWorld::GameWorld (ApplicationMode mode) : asset_manager(std::make_shared<Gam
 	for(int i=0; i<world_x; i++) {		
 		for(int j=0; j<world_y; j++) {
 			for(int k=0; k<world_z; k++) {
-				if(j == 0 || k == 9 || i == 0 || i == 9) {
+				if(j == 0 || k == 9 || k ==0 || i == 0 || i == 9) {
 					cubes[i][j][k] = true;
 				} else {
 					cubes[i][j][k] = false;
@@ -23,6 +23,7 @@ GameWorld::GameWorld (ApplicationMode mode) : asset_manager(std::make_shared<Gam
 			for(int z=0; z<world_z; z++) {
 				if(cubes[x][y][z] == true) {
 					auto cube = std::make_shared<CubeAsset>(x, y-1, z);
+					
 					if(x % 2 == 0 && y % 2 == 0 ){
 						cube->setColour(0.7,0.0,0.0);		//red
 					} else if (x % 2 == 1 && y % 2 == 1){

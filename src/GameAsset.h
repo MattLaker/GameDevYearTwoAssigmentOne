@@ -10,6 +10,7 @@
 #include <glm/mat4x4.hpp>
 
 #include "AABoundingBox.h"
+#include "GameMaths.h"
 
 class GameAsset {
  public:
