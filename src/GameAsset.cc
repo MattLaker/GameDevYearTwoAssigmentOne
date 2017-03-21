@@ -9,11 +9,11 @@ GameAsset::GameAsset(){
 	);
 	model_matrix = m;
 
-	Vector3 v = Vector3(0.0, 0.0, 0.0);
-	float width = 1;
-	float length = 1;
-	float depth = 1;
-	bbox = std::make_shared<AABoundingBox>(v, width, length, depth);
+	//Vector3 v = Vector3(0.0, 0.0, 0.0);
+	//float width = 1;
+	//float length = 1;
+	//float depth = 1;
+	//bbox = std::make_shared<AABoundingBox>(v, width, length, depth);
 }
 
 glm::mat4 GameAsset::getModelMatrix(){

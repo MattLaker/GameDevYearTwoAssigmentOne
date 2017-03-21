@@ -2,7 +2,8 @@
 
 CubeAsset::CubeAsset(float x, float y, float z) {
   Vector3 v = Vector3(x, y, z);
-  bbox->SetCentre(v);
+  bbox = std::make_shared<AABoundingBox>(v, 1.0f, 1.0f, 1.0f);
+
   // model coordinates, origin at centre.
 	GLfloat size = 0.5;
   GLfloat vertex_buffer [] {

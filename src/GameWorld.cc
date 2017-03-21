@@ -5,7 +5,7 @@ GameWorld::GameWorld (ApplicationMode mode) : asset_manager(std::make_shared<Gam
 	int world_y = 10;
 	int world_z = 10;
 
-	bool cubes [world_x][world_y][world_z]; //creates a room with one open wall.
+	bool cubes [world_x][world_y][world_z]; //creates a room with the roof open.
 	for(int i=0; i<world_x; i++) {		
 		for(int j=0; j<world_y; j++) {
 			for(int k=0; k<world_z; k++) {

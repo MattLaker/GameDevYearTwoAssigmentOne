@@ -102,6 +102,7 @@ void GameAssetManager::move_left() {
 void GameAssetManager::move_right() {
 	auto box = camera->getBBox();
 	Vector3 c = *(box->GetCentre()) + Vector3(-0.2f, 0.0f, 0.0f);
+	box->SetCentre(c);
 
 	if(CollideCheck(box)){
 		camera->move_x(-0.2);

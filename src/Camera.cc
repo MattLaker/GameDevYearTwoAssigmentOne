@@ -10,9 +10,10 @@ Camera::Camera(){
              glm::vec4(0.0f, 0.0f, 1.0f, 0.0f),
              glm::vec4(-2.0f, 0.0f, 0.0f, 1.0f)
            );
+
 	glm::mat4 m = getViewMatrix();
 	Vector3 v = Vector3(m[3][0], m[3][1], m[3][2]);
-	bbox->SetCentre(v);
+	bbox = std::make_shared<AABoundingBox>(v, 1.0f, 1.0f, 1.0f);
 }
 
 Camera::~Camera(){
@@ -33,7 +34,7 @@ void Camera::move_x (float x){
 }
 
 void Camera::move_z (float z){
-	float hyp = z;
+	/*float hyp = z;
 	float adj = hyp * (cos(angle*M_PI/180));
 	float opp = sqrt((hyp*hyp) - (adj*adj));
 	if(angle < 0) {
@@ -44,7 +45,9 @@ void Camera::move_z (float z){
 	}
 
 	view_matrix = glm::translate(view_matrix, glm::vec3(0.0, opp, adj));
-
+*/
+	view_matrix = glm::translate(view_matrix, glm::vec3(0.0, 0.0, z));
+	
 	glm::mat4 m = getViewMatrix();
 	Vector3 v = Vector3(m[3][0], m[3][1], m[3][2]);
 	bbox->SetCentre(v);
