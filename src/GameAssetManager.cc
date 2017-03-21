@@ -64,27 +64,59 @@ void GameAssetManager::AddAsset(std::shared_ptr<GameAsset> the_asset) {
   draw_list.push_back(the_asset);
 }
 
+bool GameAssetManager::CollideCheck(std::shared_ptr<AABoundingBox> b) {
+	for(auto ga: draw_list) {
+		if(b->CollidesWith(ga->getBBox())) {
+			return false;		
+		}
+	}
+	return true;
+}
+
 void GameAssetManager::move_forward() {
-	camera->move_z(0.2);
+	auto box = camera->getBBox();
+	Vector3 c = *(box->GetCentre()) + Vector3(0.0f, 0.0f, 0.2f);
+	box->SetCentre(c);
+	if(CollideCheck(box)){	
+		camera->move_z(0.2);
+	}
 }
 void GameAssetManager::move_backward() {
-	camera->move_z(-0.2);
+	auto box = camera->getBBox();
+	Vector3 c = *(box->GetCentre()) + Vector3(0.0f, 0.0f, -0.2f);
+	box->SetCentre(c);
+
+	if(CollideCheck(box)){
+		camera->move_z(-0.2);
+	} 
 }
 void GameAssetManager::move_left() {
-	camera->move_x(0.2);
+	auto box = camera->getBBox();
+	Vector3 c = *(box->GetCentre()) + Vector3(0.2f, 0.0f, 0.0f);
+	box->SetCentre(c);
+
+	if(CollideCheck(box)){
+		camera->move_x(0.2);
+	}
 }
 void GameAssetManager::move_right() {
-	camera->move_x(-0.2);
+	auto box = camera->getBBox();
+	Vector3 c = *(box->GetCentre()) + Vector3(-0.2f, 0.0f, 0.0f);
+	box->SetCentre(c);
+
+	if(CollideCheck(box)){
+		camera->move_x(-0.2);
+	}
 }
 
 void GameAssetManager::rotate_up() {
-	camera->rotate_x(-0.03);
+		camera->rotate_x(-0.03);
 }
 void GameAssetManager::rotate_down() {
-	camera->rotate_x(0.03);
+		camera->rotate_x(0.03);	
 }
 void GameAssetManager::rotate_left() {
-	camera->rotate_y(0.03);
+		camera->rotate_y(0.03);	
 }
 void GameAssetManager::rotate_right() {
 	camera->rotate_y(-0.03);

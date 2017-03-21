@@ -2,16 +2,18 @@
 #include <math.h>
 
 #include "Camera.h"
-
+#include <iostream>
 Camera::Camera(){
 	view_matrix = glm::mat4(
-             glm::vec4(1.0, 0.0, 0.0, 0.0),
-             glm::vec4(0.0, 1.0, 0.0, 0.0),
-             glm::vec4(0.0, 0.0, 1.0, 0.0),
-             glm::vec4(-2.0, 0.0, 0.0, 1.0)
+             glm::vec4(1.0f, 0.0f, 0.0f, 0.0f),
+             glm::vec4(0.0f, 1.0f, 0.0f, 0.0f),
+             glm::vec4(0.0f, 0.0f, 1.0f, 0.0f),
+             glm::vec4(-2.0f, 0.0f, 0.0f, 1.0f)
            );
 
-	//bbox->setCentre(glm::vec3(-2.0, 0.0, 0.0));
+	glm::mat4 m = getViewMatrix();
+	Vector3 v = Vector3(m[3][0], m[3][1], m[3][2]);
+	bbox = std::make_shared<AABoundingBox>(v, 1.0f, 1.0f, 1.0f);
 }
 
 Camera::~Camera(){
@@ -23,10 +25,16 @@ glm::mat4 Camera::getViewMatrix(){
 
 void Camera::move_x (float x){
 	view_matrix = glm::translate(view_matrix, glm::vec3(x, 0.0, 0.0));
+	
+	glm::mat4 m = getViewMatrix();
+	Vector3 v = Vector3(m[3][0], m[3][1], m[3][2]);
+	bbox->SetCentre(v);
+	std::cout << m[3][0] << " " << m[3][1] << " " << m[3][2] << std::endl;
+	
 }
 
 void Camera::move_z (float z){
-	float hyp = z;
+	/*float hyp = z;
 	float adj = hyp * (cos(angle*M_PI/180));
 	float opp = sqrt((hyp*hyp) - (adj*adj));
 	if(angle < 0) {
@@ -37,6 +45,14 @@ void Camera::move_z (float z){
 	}
 
 	view_matrix = glm::translate(view_matrix, glm::vec3(0.0, opp, adj));
+*/
+	view_matrix = glm::translate(view_matrix, glm::vec3(0.0, 0.0, z));
+	
+	glm::mat4 m = getViewMatrix();
+	Vector3 v = Vector3(m[3][0], m[3][1], m[3][2]);
+	bbox->SetCentre(v);
+	std::cout << m[3][0] << " " << m[3][1] << " " << m[3][2] << std::endl;
+	
 }
 
 void Camera::rotate_y (float theta){
@@ -58,7 +74,7 @@ void Camera::rotate_x (float theta){
 		glm::vec4(0.0, sin(theta), cos(theta), 0.0),
 		glm::vec4(0.0, 0.0, 0.0, 1.0)
 	);
-	view_matrix = m * view_matrix ;*/
+	view_matrix = m * view_matrix; */
 }
 
 void Camera::reset() {

@@ -17,8 +17,10 @@ public:
   virtual ~AABoundingBox();
   void SetCentre(Vector3 &);
 
-  bool CollidesWith(const shared_ptr<AABoundingBox>);
+  std::shared_ptr<Vector3> GetCentre();
 
+  bool CollidesWith(const shared_ptr<AABoundingBox>);
+  
 private:
   shared_ptr<Vector3> centre, extent_x, extent_y, extent_z;
 

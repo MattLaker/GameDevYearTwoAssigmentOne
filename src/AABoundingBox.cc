@@ -17,6 +17,11 @@ void AABoundingBox::SetCentre(Vector3 & v) {
   centre = make_shared<Vector3>(v);
 }
 
+
+std::shared_ptr<Vector3> AABoundingBox::GetCentre() {
+  return centre;
+}
+
 bool straddles(const pair<float, float> & a, const pair<float, float> & b) {
   return (a.first >= b.first && a.first <= b.second)  // a1 intersects b
     || (a.second >= b.first && a.second <= b.second)  // a2 intersects b

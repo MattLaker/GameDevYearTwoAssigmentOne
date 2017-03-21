@@ -1,6 +1,9 @@
 #include "CubeAsset.h"
 
-CubeAsset::CubeAsset(GLfloat x, GLfloat y, GLfloat z) {
+CubeAsset::CubeAsset(float x, float y, float z) {
+  Vector3 v = Vector3(x, y, z);
+  bbox = std::make_shared<AABoundingBox>(v, 1.0f, 1.0f, 1.0f);
+
   // model coordinates, origin at centre.
 	GLfloat size = 0.5;
   GLfloat vertex_buffer [] {
@@ -16,7 +19,6 @@ CubeAsset::CubeAsset(GLfloat x, GLfloat y, GLfloat z) {
       , x+size, y+size, z-size	  	//7
   };
   
-  //bbox->setCentre(glm::vec3(x, y, z));
 
   element_buffer_length = 36;
   GLuint element_buffer []  {
