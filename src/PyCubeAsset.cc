@@ -16,7 +16,7 @@ BOOST_PYTHON_MODULE(libpyhydra) {
 	;
 	class_<CubeAsset>("CubeAsset", init<float, float, float>())
 	.def("getColour", &CubeAsset::getColour)
-	.def("setColour", &CubeAsset::setColour)
+	.def("setCubeColour", &CubeAsset::setColour)
 	;
 	
 }
