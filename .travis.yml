@@ -4,7 +4,7 @@ compiler:
 
 before_install:
   - sudo apt-get update -qq
-  - sudo apt-get install -y libsdl-* libglm-dev libboost-all-dev boost-* glew-devel SDL2_* glm-devel
+  - sudo apt-get install -y libsdl-* libglm-dev libboost-all-dev boost-* glew-devel SDL2_*
   - autoreconf -i
 
 branches:
