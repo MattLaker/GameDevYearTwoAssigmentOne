@@ -3,7 +3,7 @@ compiler:
 - gcc
 
 before_install:
-  - sudo apt-get update -qq
+  - sudo apt-get update -q
   - sudo apt-get install -y libsdl-* libglm-dev libboost-all-dev boost-* glew-devel SDL2_* glm-devel -y
   - autoreconf -i
 
