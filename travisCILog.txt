@@ -1,0 +1,1210 @@
+
+Travis CI
+ 
+
+    There are no broadcasts
+
+    Blog
+    Status
+    Help
+    MattLaker MattLaker avatar
+
+MattLaker / GameDevYearTwoAssigmentOne
+
+
+build:started
+
+    Current
+    Branches
+    Build History
+    Pull Requests
+
+
+    Build #22
+    Job #22.1
+
+master removed a glm include
+
+    Commit e042a69
+
+    Compare c6394f0..e042a69
+
+    Branch master
+
+Matthew Laker avatar Matthew Laker authored and committed
+#22.1 failed
+
+    Ran for 1 min 13 sec
+
+    5 minutes ago
+
+    Job log
+    View config
+
+Remove log
+  
+Raw log
+
+worker_info
+
+Worker information
+
+hostname: production-2-worker-org-c-1-gce:e1f237c2-a758-480d-a931-8e776d143cef
+
+version: v2.7.0 https://github.com/travis-ci/worker/tree/66fc24311e055643710f4e0567f6888c927d3ab8
+
+instance: testing-gce-eb9be51f-4508-4a2f-ba7a-da814bb92652:travis-ci-ruby-precise-1480652642
+
+startup: 21.68692319s
+system_info
+
+Build system information
+
+Build language: cpp
+
+Build group: stable
+
+Build dist: precise
+
+Build id: 227967337
+
+Job id: 227967338
+
+travis-build version: ae844078b
+
+Build image provisioning date and time
+
+Fri Dec  2 04:37:59 UTC 2016
+
+Operating System Details
+
+Distributor ID:	Ubuntu
+
+Description:	Ubuntu 12.04.5 LTS
+
+Release:	12.04
+
+Codename:	precise
+
+Linux Version
+
+3.13.0-103-generic
+
+Cookbooks Version
+
+9c6cd11 https://github.com/travis-ci/travis-cookbooks/tree/9c6cd11
+
+Git version
+
+git version 1.8.5.6
+
+bash version
+
+GNU bash, version 4.2.25(1)-release (x86_64-pc-linux-gnu)
+
+Copyright (C) 2011 Free Software Foundation, Inc.
+
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+
+This is free software; you are free to change and redistribute it.
+
+There is NO WARRANTY, to the extent permitted by law.
+
+GCC version
+
+gcc (Ubuntu/Linaro 4.6.3-1ubuntu5) 4.6.3
+
+Copyright (C) 2011 Free Software Foundation, Inc.
+
+This is free software; see the source for copying conditions.  There is NO
+
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+LLVM version
+
+clang version 3.4 (tags/RELEASE_34/final)
+
+Target: x86_64-unknown-linux-gnu
+
+Thread model: posix
+
+Pre-installed Ruby versions
+
+ruby-1.9.2-p330
+
+ruby-1.9.3-p551
+
+ruby-2.0.0-p648-clang
+
+ruby-2.1.10
+
+ruby-2.2.5
+
+ruby-2.3.1
+
+Pre-installed Node.js versions
+
+v0.10.36
+
+Pre-installed Go versions
+
+1.4.2
+
+mysql --version
+
+mysql  Ver 14.14 Distrib 5.5.53, for debian-linux-gnu (x86_64) using readline 6.2
+
+Pre-installed PostgreSQL versions
+
+9.1.24
+
+9.2.19
+
+9.3.15
+
+9.4.10
+
+9.5.5
+
+Redis version
+
+redis-server 3.0.6
+
+riak version
+
+2.0.2
+
+memcached version
+
+1.4.13
+
+MongoDB version
+
+MongoDB 2.4.14
+
+CouchDB version
+
+couchdb 1.6.1
+
+Neo4j version
+
+1.9.4
+
+Cassandra version
+
+2.0.9
+
+ElasticSearch version
+
+1.4.0
+
+Installed Sphinx versions
+
+2.0.10
+
+2.1.9
+
+2.2.6
+
+Default Sphinx version
+
+2.2.6
+
+Installed Firefox version
+
+firefox 38.4.0esr
+
+PhantomJS version
+
+1.9.8
+
+ant -version
+
+Apache Ant(TM) version 1.8.2 compiled on December 3 2011
+
+mvn -version
+
+Apache Maven 3.2.5 (12a6b3acb947671f09b81f49094c53f426d8cea1; 2014-12-14T17:29:23+00:00)
+
+Maven home: /usr/local/maven
+
+Java version: 1.8.0_111, vendor: Oracle Corporation
+
+Java home: /usr/lib/jvm/java-8-oracle/jre
+
+Default locale: en, platform encoding: UTF-8
+
+OS name: "linux", version: "3.13.0-103-generic", arch: "amd64", family: "unix"
+
+fix.CVE-2015-7547
+
+$ export DEBIAN_FRONTEND=noninteractive
+
+Reading package lists...
+
+Building dependency tree...
+
+Reading state information...
+
+The following extra packages will be installed:
+
+  libc-bin libc-dev-bin libc6-dev
+
+Suggested packages:
+
+  glibc-doc
+
+The following packages will be upgraded:
+
+  libc-bin libc-dev-bin libc6 libc6-dev
+
+4 upgraded, 0 newly installed, 0 to remove and 113 not upgraded.
+
+Need to get 8,856 kB of archives.
+
+After this operation, 27.6 kB of additional disk space will be used.
+
+Get:1 http://us-central1.gce.archive.ubuntu.com/ubuntu/ precise-updates/main libc6-dev amd64 2.15-0ubuntu10.18 [2,948 kB]
+
+Get:2 http://us-central1.gce.archive.ubuntu.com/ubuntu/ precise-updates/main libc-dev-bin amd64 2.15-0ubuntu10.18 [84.5 kB]
+
+Get:3 http://us-central1.gce.archive.ubuntu.com/ubuntu/ precise-updates/main libc-bin amd64 2.15-0ubuntu10.18 [1,178 kB]
+
+Get:4 http://us-central1.gce.archive.ubuntu.com/ubuntu/ precise-updates/main libc6 amd64 2.15-0ubuntu10.18 [4,646 kB]
+
+Fetched 8,856 kB in 0s (43.4 MB/s)
+
+Preconfiguring packages ...
+
+(Reading database ... 82162 files and directories currently installed.)
+
+Preparing to replace libc6-dev 2.15-0ubuntu10.15 (using .../libc6-dev_2.15-0ubuntu10.18_amd64.deb) ...
+
+Unpacking replacement libc6-dev ...
+
+Preparing to replace libc-dev-bin 2.15-0ubuntu10.15 (using .../libc-dev-bin_2.15-0ubuntu10.18_amd64.deb) ...
+
+Unpacking replacement libc-dev-bin ...
+
+Preparing to replace libc-bin 2.15-0ubuntu10.15 (using .../libc-bin_2.15-0ubuntu10.18_amd64.deb) ...
+
+Unpacking replacement libc-bin ...
+
+Processing triggers for man-db ...
+
+Setting up libc-bin (2.15-0ubuntu10.18) ...
+
+(Reading database ... 82162 files and directories currently installed.)
+
+Preparing to replace libc6 2.15-0ubuntu10.15 (using .../libc6_2.15-0ubuntu10.18_amd64.deb) ...
+
+Unpacking replacement libc6 ...
+
+Setting up libc6 (2.15-0ubuntu10.18) ...
+
+Setting up libc-dev-bin (2.15-0ubuntu10.18) ...
+
+Setting up libc6-dev (2.15-0ubuntu10.18) ...
+
+Processing triggers for libc-bin ...
+
+ldconfig deferred processing now taking place
+git.checkout
+
+0.75s$ git clone --depth=50 --branch=master https://github.com/MattLaker/GameDevYearTwoAssigmentOne.git MattLaker/GameDevYearTwoAssigmentOne
+
+Cloning into 'MattLaker/GameDevYearTwoAssigmentOne'...
+
+remote: Counting objects: 222, done.
+
+remremote: Compressing objects: 100% (127/127), done.
+
+remote: Total 222 (delta 136), reused 174 (delta 93), pack-reused 0
+
+Receiving objects: 100% (222/222), 51.30 KiB | 0 bytes/s, done.
+
+Resolving deltas: 100% (136/136), done.
+
+Checking connectivity... done.
+
+travis_
+
+$ cd MattLaker/GameDevYearTwoAssigmentOne
+
+$ git checkout -qf e042a69123d88ce2be7634126164e1441e2cba28
+
+$ export CXX=g++
+
+$ export CC=gcc
+
+$ gcc --version
+
+gcc (Ubuntu/Linaro 4.6.3-1ubuntu5) 4.6.3
+
+Copyright (C) 2011 Free Software Foundation, Inc.
+
+This is free software; see the source for copying conditions.  There is NO
+
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+before_install.1
+
+1.33s$ sudo add-apt-repository -y ppa:team-xbmc/ppa
+
+gpg: keyring `/tmp/tmppd2vc0/secring.gpg' created
+
+gpg: keyring `/tmp/tmppd2vc0/pubring.gpg' created
+
+gpg: requesting key 91E7EE5E from hkp server keyserver.ubuntu.com
+
+gpg: /tmp/tmppd2vc0/trustdb.gpg: trustdb created
+
+gpg: key 91E7EE5E: public key "Launchpad PPA for XBMC for Linux" imported
+
+gpg: no ultimately trusted keys found
+
+gpg: Total number processed: 1
+
+gpg:               imported: 1  (RSA: 1)
+
+OK
+
+before_install.2
+
+8.11s$ sudo apt-get update -qq
+
+before_install.3
+
+15.27s$ sudo apt-get install -qq libsdl2-dev libglm-dev libboost-all-dev libglew-dev  -y
+
+Extracting templates from packages: 100%
+
+Selecting previously unselected package libglew1.6.
+
+(Reading database ... 82162 files and directories currently installed.)
+
+Unpacking libglew1.6 (from .../libglew1.6_1.6.0-4_amd64.deb) ...
+
+Selecting previously unselected package libsdl2.
+
+Unpacking libsdl2 (from .../libsdl2_2.0.3+z4~20140315-8621-1ppa1precise1_amd64.deb) ...
+
+Selecting previously unselected package gccxml.
+
+Unpacking gccxml (from .../gccxml_0.9.0+cvs20111013-1_amd64.deb) ...
+
+Selecting previously unselected package libboost1.46-dev.
+
+Unpacking libboost1.46-dev (from .../libboost1.46-dev_1.46.1-7ubuntu3_amd64.deb) ...
+
+Selecting previously unselected package libboost-dev.
+
+Unpacking libboost-dev (from .../libboost-dev_1.48.0.2_amd64.deb) ...
+
+Selecting previously unselected package libboost-date-time1.46.1.
+
+Unpacking libboost-date-time1.46.1 (from .../libboost-date-time1.46.1_1.46.1-7ubuntu3_amd64.deb) ...
+
+Selecting previously unselected package libboost-serialization1.46.1.
+
+Unpacking libboost-serialization1.46.1 (from .../libboost-serialization1.46.1_1.46.1-7ubuntu3_amd64.deb) ...
+
+Selecting previously unselected package libboost-serialization1.46-dev.
+
+Unpacking libboost-serialization1.46-dev (from .../libboost-serialization1.46-dev_1.46.1-7ubuntu3_amd64.deb) ...
+
+Selecting previously unselected package libboost-date-time1.46-dev.
+
+Unpacking libboost-date-time1.46-dev (from .../libboost-date-time1.46-dev_1.46.1-7ubuntu3_amd64.deb) ...
+
+Selecting previously unselected package libboost-date-time-dev.
+
+Unpacking libboost-date-time-dev (from .../libboost-date-time-dev_1.48.0.2_amd64.deb) ...
+
+Selecting previously unselected package libboost-system1.46.1.
+
+Unpacking libboost-system1.46.1 (from .../libboost-system1.46.1_1.46.1-7ubuntu3_amd64.deb) ...
+
+Selecting previously unselected package libboost-filesystem1.46.1.
+
+Unpacking libboost-filesystem1.46.1 (from .../libboost-filesystem1.46.1_1.46.1-7ubuntu3_amd64.deb) ...
+
+Selecting previously unselected package libboost-system1.46-dev.
+
+Unpacking libboost-system1.46-dev (from .../libboost-system1.46-dev_1.46.1-7ubuntu3_amd64.deb) ...
+
+Selecting previously unselected package libboost-filesystem1.46-dev.
+
+Unpacking libboost-filesystem1.46-dev (from .../libboost-filesystem1.46-dev_1.46.1-7ubuntu3_amd64.deb) ...
+
+Selecting previously unselected package libboost-filesystem-dev.
+
+Unpacking libboost-filesystem-dev (from .../libboost-filesystem-dev_1.48.0.2_amd64.deb) ...
+
+Selecting previously unselected package libboost-test1.46.1.
+
+Unpacking libboost-test1.46.1 (from .../libboost-test1.46.1_1.46.1-7ubuntu3_amd64.deb) ...
+
+Selecting previously unselected package libboost-test1.46-dev.
+
+Unpacking libboost-test1.46-dev (from .../libboost-test1.46-dev_1.46.1-7ubuntu3_amd64.deb) ...
+
+Selecting previously unselected package libboost-graph1.46-dev.
+
+Unpacking libboost-graph1.46-dev (from .../libboost-graph1.46-dev_1.46.1-7ubuntu3_amd64.deb) ...
+
+Selecting previously unselected package libboost-graph-dev.
+
+Unpacking libboost-graph-dev (from .../libboost-graph-dev_1.48.0.2_amd64.deb) ...
+
+Selecting previously unselected package libboost-graph-parallel1.46-dev.
+
+Unpacking libboost-graph-parallel1.46-dev (from .../libboost-graph-parallel1.46-dev_1.46.1-7ubuntu3_amd64.deb) ...
+
+Selecting previously unselected package libboost-graph-parallel-dev.
+
+Unpacking libboost-graph-parallel-dev (from .../libboost-graph-parallel-dev_1.48.0.2_amd64.deb) ...
+
+Selecting previously unselected package libboost-regex1.46.1.
+
+Unpacking libboost-regex1.46.1 (from .../libboost-regex1.46.1_1.46.1-7ubuntu3_amd64.deb) ...
+
+Selecting previously unselected package libboost-regex1.46-dev.
+
+Unpacking libboost-regex1.46-dev (from .../libboost-regex1.46-dev_1.46.1-7ubuntu3_amd64.deb) ...
+
+Selecting previously unselected package libboost-iostreams1.46-dev.
+
+Unpacking libboost-iostreams1.46-dev (from .../libboost-iostreams1.46-dev_1.46.1-7ubuntu3_amd64.deb) ...
+
+Selecting previously unselected package libboost-iostreams-dev.
+
+Unpacking libboost-iostreams-dev (from .../libboost-iostreams-dev_1.48.0.2_amd64.deb) ...
+
+Selecting previously unselected package libboost-math1.46.1.
+
+Unpacking libboost-math1.46.1 (from .../libboost-math1.46.1_1.46.1-7ubuntu3_amd64.deb) ...
+
+Selecting previously unselected package libboost-math1.46-dev.
+
+Unpacking libboost-math1.46-dev (from .../libboost-math1.46-dev_1.46.1-7ubuntu3_amd64.deb) ...
+
+Selecting previously unselected package libboost-math-dev.
+
+Unpacking libboost-math-dev (from .../libboost-math-dev_1.48.0.2_amd64.deb) ...
+
+Selecting previously unselected package libibverbs1.
+
+Unpacking libibverbs1 (from .../libibverbs1_1.1.5-1ubuntu1_amd64.deb) ...
+
+Selecting previously unselected package libnuma1.
+
+Unpacking libnuma1 (from .../libnuma1_2.0.8~rc3-1_amd64.deb) ...
+
+Selecting previously unselected package libtorque2.
+
+Unpacking libtorque2 (from .../libtorque2_2.4.16+dfsg-1+deb7u4build0.12.04.1_amd64.deb) ...
+
+Selecting previously unselected package libopenmpi1.3.
+
+Unpacking libopenmpi1.3 (from .../libopenmpi1.3_1.4.3-2.1ubuntu3_amd64.deb) ...
+
+Selecting previously unselected package libboost-mpi1.46.1.
+
+Unpacking libboost-mpi1.46.1 (from .../libboost-mpi1.46.1_1.46.1-7ubuntu3_amd64.deb) ...
+
+Selecting previously unselected package openmpi-common.
+
+Unpacking openmpi-common (from .../openmpi-common_1.4.3-2.1ubuntu3_all.deb) ...
+
+Selecting previously unselected package libibverbs-dev.
+
+Unpacking libibverbs-dev (from .../libibverbs-dev_1.1.5-1ubuntu1_amd64.deb) ...
+
+Selecting previously unselected package libopenmpi-dev.
+
+Unpacking libopenmpi-dev (from .../libopenmpi-dev_1.4.3-2.1ubuntu3_amd64.deb) ...
+
+Selecting previously unselected package mpi-default-dev.
+
+Unpacking mpi-default-dev (from .../mpi-default-dev_1.0.1_amd64.deb) ...
+
+Selecting previously unselected package libboost-mpi1.46-dev.
+
+Unpacking libboost-mpi1.46-dev (from .../libboost-mpi1.46-dev_1.46.1-7ubuntu3_amd64.deb) ...
+
+Selecting previously unselected package libboost-mpi-dev.
+
+Unpacking libboost-mpi-dev (from .../libboost-mpi-dev_1.48.0.2_amd64.deb) ...
+
+Selecting previously unselected package libboost-mpi-python-dev.
+
+Unpacking libboost-mpi-python-dev (from .../libboost-mpi-python-dev_1.48.0.2_amd64.deb) ...
+
+Selecting previously unselected package libboost-program-options1.46.1.
+
+Unpacking libboost-program-options1.46.1 (from .../libboost-program-options1.46.1_1.46.1-7ubuntu3_amd64.deb) ...
+
+Selecting previously unselected package libboost-program-options1.46-dev.
+
+Unpacking libboost-program-options1.46-dev (from .../libboost-program-options1.46-dev_1.46.1-7ubuntu3_amd64.deb) ...
+
+Selecting previously unselected package libboost-program-options-dev.
+
+Unpacking libboost-program-options-dev (from .../libboost-program-options-dev_1.48.0.2_amd64.deb) ...
+
+Selecting previously unselected package libboost-python1.46.1.
+
+Unpacking libboost-python1.46.1 (from .../libboost-python1.46.1_1.46.1-7ubuntu3_amd64.deb) ...
+
+Selecting previously unselected package libboost-python1.46-dev.
+
+Unpacking libboost-python1.46-dev (from .../libboost-python1.46-dev_1.46.1-7ubuntu3_amd64.deb) ...
+
+Selecting previously unselected package libboost-python-dev.
+
+Unpacking libboost-python-dev (from .../libboost-python-dev_1.48.0.2_amd64.deb) ...
+
+Selecting previously unselected package libboost-regex-dev.
+
+Unpacking libboost-regex-dev (from .../libboost-regex-dev_1.48.0.2_amd64.deb) ...
+
+Selecting previously unselected package libboost-serialization-dev.
+
+Unpacking libboost-serialization-dev (from .../libboost-serialization-dev_1.48.0.2_amd64.deb) ...
+
+Selecting previously unselected package libboost-signals1.46.1.
+
+Unpacking libboost-signals1.46.1 (from .../libboost-signals1.46.1_1.46.1-7ubuntu3_amd64.deb) ...
+
+Selecting previously unselected package libboost-signals1.46-dev.
+
+Unpacking libboost-signals1.46-dev (from .../libboost-signals1.46-dev_1.46.1-7ubuntu3_amd64.deb) ...
+
+Selecting previously unselected package libboost-signals-dev.
+
+Unpacking libboost-signals-dev (from .../libboost-signals-dev_1.48.0.2_amd64.deb) ...
+
+Selecting previously unselected package libboost-system-dev.
+
+Unpacking libboost-system-dev (from .../libboost-system-dev_1.48.0.2_amd64.deb) ...
+
+Selecting previously unselected package libboost-test-dev.
+
+Unpacking libboost-test-dev (from .../libboost-test-dev_1.48.0.2_amd64.deb) ...
+
+Selecting previously unselected package libboost-thread1.46.1.
+
+Unpacking libboost-thread1.46.1 (from .../libboost-thread1.46.1_1.46.1-7ubuntu3_amd64.deb) ...
+
+Selecting previously unselected package libboost-thread1.46-dev.
+
+Unpacking libboost-thread1.46-dev (from .../libboost-thread1.46-dev_1.46.1-7ubuntu3_amd64.deb) ...
+
+Selecting previously unselected package libboost-thread-dev.
+
+Unpacking libboost-thread-dev (from .../libboost-thread-dev_1.48.0.2_amd64.deb) ...
+
+Selecting previously unselected package libboost-wave1.46.1.
+
+Unpacking libboost-wave1.46.1 (from .../libboost-wave1.46.1_1.46.1-7ubuntu3_amd64.deb) ...
+
+Selecting previously unselected package libboost-wave1.46-dev.
+
+Unpacking libboost-wave1.46-dev (from .../libboost-wave1.46-dev_1.46.1-7ubuntu3_amd64.deb) ...
+
+Selecting previously unselected package libboost-wave-dev.
+
+Unpacking libboost-wave-dev (from .../libboost-wave-dev_1.48.0.2_amd64.deb) ...
+
+Selecting previously unselected package libboost-all-dev.
+
+Unpacking libboost-all-dev (from .../libboost-all-dev_1.48.0.2_amd64.deb) ...
+
+Selecting previously unselected package libboost-graph-parallel1.46.1.
+
+Unpacking libboost-graph-parallel1.46.1 (from .../libboost-graph-parallel1.46.1_1.46.1-7ubuntu3_amd64.deb) ...
+
+Selecting previously unselected package libboost-graph1.46.1.
+
+Unpacking libboost-graph1.46.1 (from .../libboost-graph1.46.1_1.46.1-7ubuntu3_amd64.deb) ...
+
+Selecting previously unselected package libglew1.6-dev.
+
+Unpacking libglew1.6-dev (from .../libglew1.6-dev_1.6.0-4_amd64.deb) ...
+
+Selecting previously unselected package libsdl2-dev.
+
+Unpacking libsdl2-dev (from .../libsdl2-dev_2.0.3+z4~20140315-8621-1ppa1precise1_amd64.deb) ...
+
+Selecting previously unselected package libglm-dev.
+
+Unpacking libglm-dev (from .../libglm-dev_0.9.2.7-1_all.deb) ...
+
+Processing triggers for man-db ...
+
+Setting up libglew1.6 (1.6.0-4) ...
+
+Setting up libsdl2 (2.0.3+z4~20140315-8621-1ppa1precise1) ...
+
+Setting up gccxml (0.9.0+cvs20111013-1) ...
+
+Setting up libboost1.46-dev (1.46.1-7ubuntu3) ...
+
+Setting up libboost-dev (1.48.0.2) ...
+
+Setting up libboost-date-time1.46.1 (1.46.1-7ubuntu3) ...
+
+Setting up libboost-serialization1.46.1 (1.46.1-7ubuntu3) ...
+
+Setting up libboost-serialization1.46-dev (1.46.1-7ubuntu3) ...
+
+Setting up libboost-date-time1.46-dev (1.46.1-7ubuntu3) ...
+
+Setting up libboost-date-time-dev (1.48.0.2) ...
+
+Setting up libboost-system1.46.1 (1.46.1-7ubuntu3) ...
+
+Setting up libboost-filesystem1.46.1 (1.46.1-7ubuntu3) ...
+
+Setting up libboost-system1.46-dev (1.46.1-7ubuntu3) ...
+
+Setting up libboost-filesystem1.46-dev (1.46.1-7ubuntu3) ...
+
+Setting up libboost-filesystem-dev (1.48.0.2) ...
+
+Setting up libboost-test1.46.1 (1.46.1-7ubuntu3) ...
+
+Setting up libboost-test1.46-dev (1.46.1-7ubuntu3) ...
+
+Setting up libboost-graph1.46-dev (1.46.1-7ubuntu3) ...
+
+Setting up libboost-graph-dev (1.48.0.2) ...
+
+Setting up libboost-graph-parallel1.46-dev (1.46.1-7ubuntu3) ...
+
+Setting up libboost-graph-parallel-dev (1.48.0.2) ...
+
+Setting up libboost-regex1.46.1 (1.46.1-7ubuntu3) ...
+
+Setting up libboost-regex1.46-dev (1.46.1-7ubuntu3) ...
+
+Setting up libboost-iostreams1.46-dev (1.46.1-7ubuntu3) ...
+
+Setting up libboost-iostreams-dev (1.48.0.2) ...
+
+Setting up libboost-math1.46.1 (1.46.1-7ubuntu3) ...
+
+Setting up libboost-math1.46-dev (1.46.1-7ubuntu3) ...
+
+Setting up libboost-math-dev (1.48.0.2) ...
+
+Setting up libibverbs1 (1.1.5-1ubuntu1) ...
+
+Setting up libnuma1 (2.0.8~rc3-1) ...
+
+Setting up libtorque2 (2.4.16+dfsg-1+deb7u4build0.12.04.1) ...
+
+Setting up libopenmpi1.3 (1.4.3-2.1ubuntu3) ...
+
+Setting up libboost-mpi1.46.1 (1.46.1-7ubuntu3) ...
+
+Setting up openmpi-common (1.4.3-2.1ubuntu3) ...
+
+Setting up libibverbs-dev (1.1.5-1ubuntu1) ...
+
+Setting up libopenmpi-dev (1.4.3-2.1ubuntu3) ...
+
+update-alternatives: using /usr/lib/openmpi/include to provide /usr/include/mpi (mpi) in auto mode.
+
+Setting up mpi-default-dev (1.0.1) ...
+
+Setting up libboost-mpi1.46-dev (1.46.1-7ubuntu3) ...
+
+Setting up libboost-mpi-dev (1.48.0.2) ...
+
+Setting up libboost-mpi-python-dev (1.48.0.2) ...
+
+Setting up libboost-program-options1.46.1 (1.46.1-7ubuntu3) ...
+
+Setting up libboost-program-options1.46-dev (1.46.1-7ubuntu3) ...
+
+Setting up libboost-program-options-dev (1.48.0.2) ...
+
+Setting up libboost-python1.46.1 (1.46.1-7ubuntu3) ...
+
+Setting up libboost-python1.46-dev (1.46.1-7ubuntu3) ...
+
+Setting up libboost-python-dev (1.48.0.2) ...
+
+Setting up libboost-regex-dev (1.48.0.2) ...
+
+Setting up libboost-serialization-dev (1.48.0.2) ...
+
+Setting up libboost-signals1.46.1 (1.46.1-7ubuntu3) ...
+
+Setting up libboost-signals1.46-dev (1.46.1-7ubuntu3) ...
+
+Setting up libboost-signals-dev (1.48.0.2) ...
+
+Setting up libboost-system-dev (1.48.0.2) ...
+
+Setting up libboost-test-dev (1.48.0.2) ...
+
+Setting up libboost-thread1.46.1 (1.46.1-7ubuntu3) ...
+
+Setting up libboost-thread1.46-dev (1.46.1-7ubuntu3) ...
+
+Setting up libboost-thread-dev (1.48.0.2) ...
+
+Setting up libboost-wave1.46.1 (1.46.1-7ubuntu3) ...
+
+Setting up libboost-wave1.46-dev (1.46.1-7ubuntu3) ...
+
+Setting up libboost-wave-dev (1.48.0.2) ...
+
+Setting up libboost-all-dev (1.48.0.2) ...
+
+Setting up libboost-graph-parallel1.46.1 (1.46.1-7ubuntu3) ...
+
+Setting up libboost-graph1.46.1 (1.46.1-7ubuntu3) ...
+
+Setting up libglew1.6-dev (1.6.0-4) ...
+
+Setting up libsdl2-dev (2.0.3+z4~20140315-8621-1ppa1precise1) ...
+
+Setting up libglm-dev (0.9.2.7-1) ...
+
+Processing triggers for libc-bin ...
+
+ldconfig deferred processing now taking place
+
+before_install.4
+
+6.89s$ autoreconf -i
+
+aclocal: installing `m4/libtool.m4' from `/usr/share/aclocal/libtool.m4'
+
+aclocal: installing `m4/ltoptions.m4' from `/usr/share/aclocal/ltoptions.m4'
+
+aclocal: installing `m4/ltsugar.m4' from `/usr/share/aclocal/ltsugar.m4'
+
+aclocal: installing `m4/ltversion.m4' from `/usr/share/aclocal/ltversion.m4'
+
+aclocal: installing `m4/lt~obsolete.m4' from `/usr/share/aclocal/lt~obsolete.m4'
+
+aclocal: installing `m4/pkg.m4' from `/usr/share/aclocal/pkg.m4'
+
+libtoolize: putting auxiliary files in `.'.
+
+libtoolize: copying file `./config.guess'
+
+libtoolize: copying file `./config.sub'
+
+libtoolize: copying file `./install-sh'
+
+libtoolize: copying file `./ltmain.sh'
+
+configure.ac:3: installing `./missing'
+
+src/Makefile.am: installing `./depcomp'
+
+16.18s$ ./configure && make && make test
+
+checking for a BSD-compatible install... /usr/bin/install -c
+
+checking whether build environment is sane... yes
+
+checking for a thread-safe mkdir -p... /bin/mkdir -p
+
+checking for gawk... gawk
+
+checking whether make sets $(MAKE)... yes
+
+checking build system type... x86_64-unknown-linux-gnu
+
+checking host system type... x86_64-unknown-linux-gnu
+
+checking how to print strings... printf
+
+checking for style of include used by make... GNU
+
+checking for gcc... gcc
+
+checking whether the C compiler works... yes
+
+checking for C compiler default output file name... a.out
+
+checking for suffix of executables... 
+
+checking whether we are cross compiling... no
+
+checking for suffix of object files... o
+
+checking whether we are using the GNU C compiler... yes
+
+checking whether gcc accepts -g... yes
+
+checking for gcc option to accept ISO C89... none needed
+
+checking dependency style of gcc... gcc3
+
+checking for a sed that does not truncate output... /bin/sed
+
+checking for grep that handles long lines and -e... /bin/grep
+
+checking for egrep... /bin/grep -E
+
+checking for fgrep... /bin/grep -F
+
+checking for ld used by gcc... /usr/bin/ld
+
+checking if the linker (/usr/bin/ld) is GNU ld... yes
+
+checking for BSD- or MS-compatible name lister (nm)... /usr/bin/nm -B
+
+checking the name lister (/usr/bin/nm -B) interface... BSD nm
+
+checking whether ln -s works... yes
+
+checking the maximum length of command line arguments... 1572864
+
+checking whether the shell understands some XSI constructs... yes
+
+checking whether the shell understands "+="... yes
+
+checking how to convert x86_64-unknown-linux-gnu file names to x86_64-unknown-linux-gnu format... func_convert_file_noop
+
+checking how to convert x86_64-unknown-linux-gnu file names to toolchain format... func_convert_file_noop
+
+checking for /usr/bin/ld option to reload object files... -r
+
+checking for objdump... objdump
+
+checking how to recognize dependent libraries... pass_all
+
+checking for dlltool... no
+
+checking how to associate runtime and link libraries... printf %s\n
+
+checking for ar... ar
+
+checking for archiver @FILE support... @
+
+checking for strip... strip
+
+checking for ranlib... ranlib
+
+checking command to parse /usr/bin/nm -B output from gcc object... ok
+
+checking for sysroot... no
+
+checking for mt... mt
+
+checking if mt is a manifest tool... no
+
+checking how to run the C preprocessor... gcc -E
+
+checking for ANSI C header files... yes
+
+checking for sys/types.h... yes
+
+checking for sys/stat.h... yes
+
+checking for stdlib.h... yes
+
+checking for string.h... yes
+
+checking for memory.h... yes
+
+checking for strings.h... yes
+
+checking for inttypes.h... yes
+
+checking for stdint.h... yes
+
+checking for unistd.h... yes
+
+checking for dlfcn.h... yes
+
+checking for objdir... .libs
+
+checking if gcc supports -fno-rtti -fno-exceptions... no
+
+checking for gcc option to produce PIC... -fPIC -DPIC
+
+checking if gcc PIC flag -fPIC -DPIC works... yes
+
+checking if gcc static flag -static works... yes
+
+checking if gcc supports -c -o file.o... yes
+
+checking if gcc supports -c -o file.o... (cached) yes
+
+checking whether the gcc linker (/usr/bin/ld -m elf_x86_64) supports shared libraries... yes
+
+checking whether -lc should be explicitly linked in... no
+
+checking dynamic linker characteristics... GNU/Linux ld.so
+
+checking how to hardcode library paths into programs... immediate
+
+checking whether stripping libraries is possible... yes
+
+checking if libtool supports shared libraries... yes
+
+checking whether to build shared libraries... yes
+
+checking whether to build static libraries... yes
+
+checking whether we are using the GNU C++ compiler... yes
+
+checking whether g++ accepts -g... yes
+
+checking dependency style of g++... gcc3
+
+checking how to run the C++ preprocessor... g++ -E
+
+checking for ld used by g++... /usr/bin/ld -m elf_x86_64
+
+checking if the linker (/usr/bin/ld -m elf_x86_64) is GNU ld... yes
+
+checking whether the g++ linker (/usr/bin/ld -m elf_x86_64) supports shared libraries... yes
+
+checking for g++ option to produce PIC... -fPIC -DPIC
+
+checking if g++ PIC flag -fPIC -DPIC works... yes
+
+checking if g++ static flag -static works... yes
+
+checking if g++ supports -c -o file.o... yes
+
+checking if g++ supports -c -o file.o... (cached) yes
+
+checking whether the g++ linker (/usr/bin/ld -m elf_x86_64) supports shared libraries... yes
+
+checking dynamic linker characteristics... (cached) GNU/Linux ld.so
+
+checking how to hardcode library paths into programs... immediate
+
+checking for Boost headers version >= 0.0.0... yes
+
+checking for Boost's header version... 1_46_1
+
+checking for the toolset name used by Boost for g++... gcc46 -gcc
+
+checking boost/program_options.hpp usability... yes
+
+checking boost/program_options.hpp presence... yes
+
+checking for boost/program_options.hpp... yes
+
+checking for the Boost program_options library... yes
+
+checking boost/test/unit_test.hpp usability... yes
+
+checking boost/test/unit_test.hpp presence... yes
+
+checking for boost/test/unit_test.hpp... yes
+
+checking for the Boost unit_test_framework library... (cached) yes
+
+checking glm/glm.hpp usability... yes
+
+checking glm/glm.hpp presence... yes
+
+checking for glm/glm.hpp... yes
+
+checking for pkg-config... /usr/bin/pkg-config
+
+checking pkg-config is at least version 0.9.0... yes
+
+checking for gl... yes
+
+checking for glew... yes
+
+checking for sdl2... yes
+
+configure: creating ./config.status
+
+config.status: creating Makefile
+
+config.status: creating src/Makefile
+
+config.status: creating shaders/Makefile
+
+config.status: creating config.h
+
+config.status: executing depfiles commands
+
+config.status: executing libtool commands
+
+make  all-recursive
+
+make[1]: Entering directory `/home/travis/build/MattLaker/GameDevYearTwoAssigmentOne'
+
+Making all in shaders
+
+make[2]: Entering directory `/home/travis/build/MattLaker/GameDevYearTwoAssigmentOne/shaders'
+
+make[2]: Nothing to be done for `all'.
+
+make[2]: Leaving directory `/home/travis/build/MattLaker/GameDevYearTwoAssigmentOne/shaders'
+
+Making all in src
+
+make[2]: Entering directory `/home/travis/build/MattLaker/GameDevYearTwoAssigmentOne/src'
+
+depbase=`echo GameWorld.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`;\
+
+	/bin/bash ../libtool --tag=CXX   --mode=compile g++ -DHAVE_CONFIG_H -I. -I..  -DGL_GLEXT_PROTOTYPES -DGL3_PROTOTYPES  -I/usr/include/GL   -D_REENTRANT -I/usr/include/SDL2      -g -O2 -MT GameWorld.lo -MD -MP -MF $depbase.Tpo -c -o GameWorld.lo GameWorld.cc &&\
+
+	mv -f $depbase.Tpo $depbase.Plo
+
+libtool: compile:  g++ -DHAVE_CONFIG_H -I. -I.. -DGL_GLEXT_PROTOTYPES -DGL3_PROTOTYPES -I/usr/include/GL -D_REENTRANT -I/usr/include/SDL2 -g -O2 -MT GameWorld.lo -MD -MP -MF .deps/GameWorld.Tpo -c GameWorld.cc  -fPIC -DPIC -o .libs/GameWorld.o
+
+In file included from GameAsset.h:12:0,
+
+                 from GameAssetManager.h:20,
+
+                 from GameWorld.h:11,
+
+                 from GameWorld.cc:1:
+
+AABoundingBox.h:20:3: error: ‘shared_ptr’ in namespace ‘std’ does not name a type
+
+AABoundingBox.h:22:27: error: ‘shared_ptr’ does not name a type
+
+AABoundingBox.h:22:27: error: ISO C++ forbids declaration of ‘parameter’ with no type [-fpermissive]
+
+AABoundingBox.h:22:37: error: expected ‘,’ or ‘...’ before ‘<’ token
+
+AABoundingBox.h:25:3: error: ‘shared_ptr’ does not name a type
+
+In file included from GameAssetManager.h:20:0,
+
+                 from GameWorld.h:11,
+
+                 from GameWorld.cc:1:
+
+GameAsset.h:20:3: error: ‘shared_ptr’ in namespace ‘std’ does not name a type
+
+GameAsset.h:26:3: error: ‘shared_ptr’ in namespace ‘std’ does not name a type
+
+In file included from GameAssetManager.h:21:0,
+
+                 from GameWorld.h:11,
+
+                 from GameWorld.cc:1:
+
+Camera.h:31:16: error: ISO C++ forbids initialization of member ‘angle’ [-fpermissive]
+
+Camera.h:31:16: error: making ‘angle’ static [-fpermissive]
+
+Camera.h:31:16: error: ISO C++ forbids in-class initialization of non-const static member ‘angle’
+
+In file included from GameWorld.h:11:0,
+
+                 from GameWorld.cc:1:
+
+GameAssetManager.h:36:42: error: expected ‘,’ or ‘...’ before ‘&&’ token
+
+GameAssetManager.h:36:44: error: invalid constructor; you probably meant ‘GameAssetManager (const GameAssetManager&)’
+
+GameAssetManager.h:38:22: error: ‘std::shared_ptr’ has not been declared
+
+GameAssetManager.h:38:32: error: expected ‘,’ or ‘...’ before ‘<’ token
+
+GameAssetManager.h:49:26: error: ‘std::shared_ptr’ has not been declared
+
+GameAssetManager.h:49:36: error: expected ‘,’ or ‘...’ before ‘<’ token
+
+GameAssetManager.h:55:3: error: ‘shared_ptr’ in namespace ‘std’ does not name a type
+
+GameAssetManager.h:57:15: error: ‘shared_ptr’ is not a member of ‘std’
+
+GameAssetManager.h:57:15: error: ‘shared_ptr’ is not a member of ‘std’
+
+GameAssetManager.h:57:43: error: ‘draw_list’ was not declared in this scope
+
+GameAssetManager.h:57:43: error: template argument 1 is invalid
+
+GameAssetManager.h:57:43: error: template argument 2 is invalid
+
+In file included from GameWorld.cc:1:0:
+
+GameWorld.h:42:3: error: ‘shared_ptr’ in namespace ‘std’ does not name a type
+
+GameWorld.cc: In constructor ‘GameWorld::GameWorld(ApplicationMode)’:
+
+GameWorld.cc:3:47: error: class ‘GameWorld’ does not have any field named ‘asset_manager’
+
+GameWorld.cc:3:61: error: ‘make_shared’ is not a member of ‘std’
+
+GameWorld.cc:3:94: error: expected primary-expression before ‘>’ token
+
+GameWorld.cc:25:11: error: ‘cube’ does not name a type
+
+GameWorld.cc:28:7: error: ‘cube’ was not declared in this scope
+
+GameWorld.cc:30:7: error: ‘cube’ was not declared in this scope
+
+GameWorld.cc:32:7: error: ‘cube’ was not declared in this scope
+
+GameWorld.cc:34:7: error: ‘cube’ was not declared in this scope
+
+GameWorld.cc:36:7: error: ‘cube’ was not declared in this scope
+
+GameWorld.cc:38:6: error: ‘asset_manager’ was not declared in this scope
+
+GameWorld.cc:38:30: error: ‘cube’ was not declared in this scope
+
+GameWorld.cc: In member function ‘void GameWorld::Draw()’:
+
+GameWorld.cc:47:3: error: ‘asset_manager’ was not declared in this scope
+
+GameWorld.cc: In member function ‘void GameWorld::move_forward()’:
+
+GameWorld.cc:51:3: error: ‘asset_manager’ was not declared in this scope
+
+GameWorld.cc: In member function ‘void GameWorld::move_backward()’:
+
+GameWorld.cc:54:3: error: ‘asset_manager’ was not declared in this scope
+
+GameWorld.cc: In member function ‘void GameWorld::move_left()’:
+
+GameWorld.cc:57:3: error: ‘asset_manager’ was not declared in this scope
+
+GameWorld.cc: In member function ‘void GameWorld::move_right()’:
+
+GameWorld.cc:60:3: error: ‘asset_manager’ was not declared in this scope
+
+GameWorld.cc: In member function ‘void GameWorld::rotate_up()’:
+
+GameWorld.cc:64:3: error: ‘asset_manager’ was not declared in this scope
+
+GameWorld.cc: In member function ‘void GameWorld::rotate_down()’:
+
+GameWorld.cc:67:3: error: ‘asset_manager’ was not declared in this scope
+
+GameWorld.cc: In member function ‘void GameWorld::rotate_left()’:
+
+GameWorld.cc:70:3: error: ‘asset_manager’ was not declared in this scope
+
+GameWorld.cc: In member function ‘void GameWorld::rotate_right()’:
+
+GameWorld.cc:73:3: error: ‘asset_manager’ was not declared in this scope
+
+make[2]: *** [GameWorld.lo] Error 1
+
+make[2]: Leaving directory `/home/travis/build/MattLaker/GameDevYearTwoAssigmentOne/src'
+
+make[1]: *** [all-recursive] Error 1
+
+make[1]: Leaving directory `/home/travis/build/MattLaker/GameDevYearTwoAssigmentOne'
+
+make: *** [all] Error 2
+
+The command "./configure && make && make test" exited with 2.
+
+Done. Your build exited with 1.
