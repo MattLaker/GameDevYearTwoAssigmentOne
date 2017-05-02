@@ -3,8 +3,8 @@ compiler:
 - gcc
 
 before_install:
-  - sudo dnf update -qq
-  - sudo dnf install -qq libsdl-* libglm-dev libboost-all-dev boost-* glew-devel SDL2_* glm-devel -y
+  - sudo apt-get update -qq
+  - sudo apt-get install -qq libsdl-* libglm-dev libboost-all-dev boost-* glew-devel SDL2_* glm-devel -y
   - autoreconf -i
 
 branches:
