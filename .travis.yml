@@ -16,6 +16,7 @@ notifications:
 os:
 - linux
 - osx
+- windows
 
 sudo: true
 
