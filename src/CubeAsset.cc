@@ -1,5 +1,9 @@
 #include "CubeAsset.h"
 
+/*
+* Constructor creates a cube at location x, y, z and creates a bounding box in the same position
+* binds buffers and sends them to the GPU
+*/
 CubeAsset::CubeAsset(float x, float y, float z) {
   Vector3 v = Vector3(x, y, z);
   bbox = std::make_shared<AABoundingBox>(v, 1.0f, 1.0f, 1.0f);
@@ -77,6 +81,9 @@ void checkError(std::string file, int line) {
   }
 }
 
+/*
+* Draws the cube onto the screen
+*/
 void CubeAsset::Draw(GLuint program_token) {
 	glm::mat4 m = this->getModelMatrix();
 	GLuint model_uniform = glGetUniformLocation(program_token, "model");
@@ -143,10 +150,16 @@ void CubeAsset::Draw(GLuint program_token) {
   glDisableVertexAttribArray(position_attrib);
 }
 
+/*
+* returns the colour of the cube as a glm::vec3 in the form (r, g, b)
+*/
 glm::vec3 CubeAsset::getColour() {
 	return colour_token;
 }
 
+/*
+* takes in 3 float values to set the colour of the cube.
+*/
 void CubeAsset::setColour(float r, float g, float b) {
 	colour_token = glm::vec3(r, g, b);
 }

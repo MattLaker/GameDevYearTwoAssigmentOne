@@ -1,5 +1,8 @@
 #include "GameWorld.h"
 
+/*
+* 
+*/
 GameWorld::GameWorld (ApplicationMode mode) : asset_manager(std::make_shared<GameAssetManager>(mode)) {
 	int world_x = 10;
 	int world_y = 10;
@@ -43,32 +46,58 @@ GameWorld::GameWorld (ApplicationMode mode) : asset_manager(std::make_shared<Gam
 		
 }	
 
+/*
+* calls draw on the asset manager to iterate through the draw list drawing
+* all assets to the screen  
+*/
 void GameWorld::Draw() {
   asset_manager->Draw();
 }
 
+/*
+* passes the move forward call to the asset manager  
+*/
 void GameWorld::move_forward() {
   asset_manager->move_forward();
 }
+/*
+* passes the move backward call to the asset manager  
+*/
 void GameWorld::move_backward() {
   asset_manager->move_backward();
 }
+/*
+* passes the move left call to the asset manager  
+*/
 void GameWorld::move_left() {
   asset_manager->move_left();
 }
+/*
+* passes the move right call to the asset manager  
+*/
 void GameWorld::move_right() {
   asset_manager->move_right();
 }
-
+/*
+* passes the rotate up call to the asset manager  
+*/
 void GameWorld::rotate_up() {
   asset_manager->rotate_up();
 }
-void GameWorld::rotate_down() {
+/*
+* passes the rotate down call to the asset manager  
+*/void GameWorld::rotate_down() {
   asset_manager->rotate_down();
 }
+/*
+* passes the move rotate left to the asset manager  
+*/
 void GameWorld::rotate_left() {
   asset_manager->rotate_left();
 }
+/*
+* passes the rotate right call to the asset manager  
+*/
 void GameWorld::rotate_right() {
   asset_manager->rotate_right();
 }

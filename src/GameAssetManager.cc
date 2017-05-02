@@ -64,6 +64,10 @@ void GameAssetManager::AddAsset(std::shared_ptr<GameAsset> the_asset) {
   draw_list.push_back(the_asset);
 }
 
+/*
+* checks collision between the parameter bounding box against all other assets 
+* in the draw list
+*/
 bool GameAssetManager::CollideCheck(std::shared_ptr<AABoundingBox> b) {
 	for(auto ga: draw_list) {
 		if(b->CollidesWith(ga->getBBox())) {
@@ -73,6 +77,9 @@ bool GameAssetManager::CollideCheck(std::shared_ptr<AABoundingBox> b) {
 	return true;
 }
 
+/*
+* checks if moving forward will cause a coliision and if not then call move on the camera
+*/
 void GameAssetManager::move_forward() {
 	auto box = camera->getBBox();
 	Vector3 c = *(box->GetCentre()) + Vector3(0.0f, 0.0f, 0.2f);
@@ -81,6 +88,10 @@ void GameAssetManager::move_forward() {
 		camera->move_z(0.2);
 	}
 }
+
+/*
+* checks if moving backward will cause a coliision and if not then call move on the camera
+*/
 void GameAssetManager::move_backward() {
 	auto box = camera->getBBox();
 	Vector3 c = *(box->GetCentre()) + Vector3(0.0f, 0.0f, -0.2f);
@@ -90,6 +101,10 @@ void GameAssetManager::move_backward() {
 		camera->move_z(-0.2);
 	} 
 }
+
+/*
+* checks if moving left will cause a coliision and if not then call move on the camera
+*/
 void GameAssetManager::move_left() {
 	auto box = camera->getBBox();
 	Vector3 c = *(box->GetCentre()) + Vector3(0.2f, 0.0f, 0.0f);
@@ -99,6 +114,10 @@ void GameAssetManager::move_left() {
 		camera->move_x(0.2);
 	}
 }
+
+/*
+* checks if moving right will cause a coliision and if not then call move on the camera
+*/
 void GameAssetManager::move_right() {
 	auto box = camera->getBBox();
 	Vector3 c = *(box->GetCentre()) + Vector3(-0.2f, 0.0f, 0.0f);
@@ -109,15 +128,27 @@ void GameAssetManager::move_right() {
 	}
 }
 
+/*
+* calls rotate on the camera around the x-axis negatively
+*/
 void GameAssetManager::rotate_up() {
 		camera->rotate_x(-0.03);
 }
+/*
+* calls rotate on the camera around the x-axis positively
+*/
 void GameAssetManager::rotate_down() {
 		camera->rotate_x(0.03);	
 }
+/*
+* calls rotate on the camera around the y-axis positively
+*/
 void GameAssetManager::rotate_left() {
 		camera->rotate_y(0.03);	
 }
+/*
+* calls rotate on the camera around the y-axis negatively
+*/
 void GameAssetManager::rotate_right() {
 	camera->rotate_y(-0.03);
 }

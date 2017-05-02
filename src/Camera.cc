@@ -3,6 +3,11 @@
 
 #include "Camera.h"
 #include <iostream>
+
+/*
+* Constructor that creates a camera at poisition (-2, 0, 0) and creates a bounding box in the
+* same position.
+*/
 Camera::Camera(){
 	view_matrix = glm::mat4(
              glm::vec4(1.0f, 0.0f, 0.0f, 0.0f),
@@ -19,10 +24,16 @@ Camera::Camera(){
 Camera::~Camera(){
 }
 
+/*
+* Returns a 4x4 matrix holding positional information about the camera.
+*/
 glm::mat4 Camera::getViewMatrix(){
 	return view_matrix;
 }
 
+/*
+* Moves the camera in the x direction by the given float amount by altering the view matrix.
+*/
 void Camera::move_x (float x){
 	view_matrix = glm::translate(view_matrix, glm::vec3(x, 0.0, 0.0));
 	
@@ -33,6 +44,9 @@ void Camera::move_x (float x){
 	
 }
 
+/*
+* Moves the camera in the z direction by the given float amount by altering the view matrix.
+*/
 void Camera::move_z (float z){
 	/*float hyp = z;
 	float adj = hyp * (cos(angle*M_PI/180));
@@ -55,6 +69,9 @@ void Camera::move_z (float z){
 	
 }
 
+/*
+* Rotates the camera around the y-axis by the given float angle by altering the view matrix.
+*/
 void Camera::rotate_y (float theta){
 	glm::mat4 m = glm::mat4(
 		glm::vec4(cos(theta), 0.0, sin(theta), 0.0),
@@ -66,6 +83,9 @@ void Camera::rotate_y (float theta){
 	std::cout << m[3][0] << " " << m[3][1] << " " << m[3][2] << std::endl;
 }
 
+/*
+* Rotates the camera around the x-axis by the given float angle by altering the view matrix.
+*/
 void Camera::rotate_x (float theta){
 	angle = angle + (theta*60);
 
@@ -79,6 +99,9 @@ void Camera::rotate_x (float theta){
 	std::cout << m[3][0] << " " << m[3][1] << " " << m[3][2] << std::endl;
 }
 
+/*
+* Resets the camera by making the view matrix equal the the identity matrix.
+*/
 void Camera::reset() {
 	glm::mat4 identity = glm::mat4(
 		glm::vec4(1.0, 0.0, 0.0, 0.0),
@@ -93,10 +116,16 @@ void Camera::reset() {
 void Camera::Draw(GLuint) {
 }
 
+/*
+* Returns the angle at which the camera is at in respect to the x-axis.
+*/
 float Camera::getAngle() {
 	return angle;
 }
 
+/*
+* Print 'hello, world' to the terminal, used for testing python bindings.
+*/
 void Camera::greet() {
 	std::cout << "hello, world" << std::endl;
 }
