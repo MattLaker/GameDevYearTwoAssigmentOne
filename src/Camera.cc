@@ -93,3 +93,7 @@ void Camera::Draw(GLuint) {
 float Camera::getAngle() {
 	return angle;
 }
+
+void Camera::greet() {
+	std::cout << "hello, world" << std::endl;
+}

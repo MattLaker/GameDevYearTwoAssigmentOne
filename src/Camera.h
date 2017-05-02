@@ -24,6 +24,7 @@ class Camera : public GameAsset {
 	void rotate_x(float);
 	void Draw(GLuint);
 	void reset();
+	void greet();
 	
  private:
 	glm::mat4 view_matrix;
