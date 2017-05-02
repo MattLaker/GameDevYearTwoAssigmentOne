@@ -63,10 +63,11 @@ void Camera::rotate_y (float theta){
         	glm::vec4(0.0, 0.0, 0.0, 1.0)
 	);			
 	view_matrix = m * view_matrix ; 
+	std::cout << m[3][0] << " " << m[3][1] << " " << m[3][2] << std::endl;
 }
 
 void Camera::rotate_x (float theta){
-	/*angle = angle + (theta*60);
+	angle = angle + (theta*60);
 
 	glm::mat4 m = glm::mat4(
 		glm::vec4(1.0, 0.0, 0.0, 0.0),
@@ -74,7 +75,8 @@ void Camera::rotate_x (float theta){
 		glm::vec4(0.0, sin(theta), cos(theta), 0.0),
 		glm::vec4(0.0, 0.0, 0.0, 1.0)
 	);
-	view_matrix = m * view_matrix; */
+	view_matrix = m * view_matrix; 
+	std::cout << m[3][0] << " " << m[3][1] << " " << m[3][2] << std::endl;
 }
 
 void Camera::reset() {
@@ -85,6 +87,7 @@ void Camera::reset() {
 		glm::vec4(0.0, 0.0, 0.0, 1.0)
 	);
 	view_matrix = identity;
+	std::cout << view_matrix[3][0] << " " << view_matrix[3][1] << " " << view_matrix[3][2] << std::endl;
 }
 
 void Camera::Draw(GLuint) {
